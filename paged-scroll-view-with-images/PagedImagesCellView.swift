@@ -22,7 +22,7 @@ class PagedImagesCellView: UIView {
   }
   
   func showImage(image: UIImage) {
-    
+    imageView.image = image
   }
   
   private func setupImageView() {
