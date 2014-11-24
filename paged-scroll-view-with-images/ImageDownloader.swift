@@ -10,9 +10,7 @@
 import UIKit
 
 class ImageDownloader {
-  let validMimeTypes = ["image/jpeg", "image/pjpeg"]
-  
-  func download(url: String, onSuccess: (UIImage)->(),
+  class func download(url: String, onSuccess: (UIImage)->(),
     onAlways: (()->())? = nil) -> NSURLSessionDataTask? {
       
     return TegDownloader.dataWithUrl(url,
@@ -27,11 +25,12 @@ class ImageDownloader {
     )
   }
   
-  func validMimeType(mimeType: String) -> Bool {
+  class func validMimeType(mimeType: String) -> Bool {
+    let validMimeTypes = ["image/jpeg", "image/pjpeg"]
     return contains(validMimeTypes, mimeType)
   }
   
-  private func handleResponse(data: NSData, response: NSHTTPURLResponse, callback: (UIImage)->()) {
+  class private func handleResponse(data: NSData, response: NSHTTPURLResponse, callback: (UIImage)->()) {
     if response.statusCode != 200 {
       handleError(callback)
       return
@@ -52,7 +51,7 @@ class ImageDownloader {
     }
   }
   
-  private func handleError(callback: (UIImage)->()) {
+  class private func handleError(callback: (UIImage)->()) {
     if let image = UIImage(named: "no_image.jpg") {
        TegQ.main { callback(image) }
     }

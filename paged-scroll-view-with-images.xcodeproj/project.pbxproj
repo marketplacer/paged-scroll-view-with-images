@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2B51085C1A22FC8C006C029B /* YiiPagedImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51085B1A22FC8C006C029B /* YiiPagedImages.swift */; };
 		2B51085E1A230191006C029B /* PagedImagesCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51085D1A230191006C029B /* PagedImagesCellView.swift */; };
-		2B5108601A23E179006C029B /* ThingImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51085F1A23E179006C029B /* ThingImageDownloader.swift */; };
+		2B5108601A23E179006C029B /* ImageDownloadTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51085F1A23E179006C029B /* ImageDownloadTask.swift */; };
 		2B5108621A23E190006C029B /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5108611A23E190006C029B /* ImageDownloader.swift */; };
 		2B5108651A23E1D4006C029B /* TegDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5108641A23E1D4006C029B /* TegDownloader.swift */; };
 		2B5108671A23E684006C029B /* TegQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5108661A23E684006C029B /* TegQ.swift */; };
@@ -42,7 +42,7 @@
 /* Begin PBXFileReference section */
 		2B51085B1A22FC8C006C029B /* YiiPagedImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YiiPagedImages.swift; sourceTree = "<group>"; };
 		2B51085D1A230191006C029B /* PagedImagesCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagedImagesCellView.swift; sourceTree = "<group>"; };
-		2B51085F1A23E179006C029B /* ThingImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThingImageDownloader.swift; sourceTree = "<group>"; };
+		2B51085F1A23E179006C029B /* ImageDownloadTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadTask.swift; sourceTree = "<group>"; };
 		2B5108611A23E190006C029B /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		2B5108641A23E1D4006C029B /* TegDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegDownloader.swift; sourceTree = "<group>"; };
 		2B5108661A23E684006C029B /* TegQ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegQ.swift; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 				2B5108681A23E947006C029B /* AsyncDownloaderSession.swift */,
 				2B5108641A23E1D4006C029B /* TegDownloader.swift */,
 				2B5108611A23E190006C029B /* ImageDownloader.swift */,
-				2B51085F1A23E179006C029B /* ThingImageDownloader.swift */,
+				2B51085F1A23E179006C029B /* ImageDownloadTask.swift */,
 			);
 			name = Http;
 			sourceTree = "<group>";
@@ -300,7 +300,7 @@
 				2BEDBB6D1A22ABDD0058380D /* ViewController.swift in Sources */,
 				2B5108651A23E1D4006C029B /* TegDownloader.swift in Sources */,
 				2B51085E1A230191006C029B /* PagedImagesCellView.swift in Sources */,
-				2B5108601A23E179006C029B /* ThingImageDownloader.swift in Sources */,
+				2B5108601A23E179006C029B /* ImageDownloadTask.swift in Sources */,
 				2BEDBB6B1A22ABDD0058380D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
