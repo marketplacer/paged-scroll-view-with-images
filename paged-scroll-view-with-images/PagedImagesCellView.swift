@@ -17,7 +17,8 @@ class PagedImagesCellView: UIView {
   override init(frame: CGRect) {
     super.init(frame: frame)
     
-    setupImageView()
+    PagedImagesCellView.setupImageView(imageView, size: frame.size)
+    addSubview(imageView)
   }
 
   required init(coder aDecoder: NSCoder) {
@@ -28,10 +29,10 @@ class PagedImagesCellView: UIView {
     imageView.image = image
   }
   
-  private func setupImageView() {
-    addSubview(imageView)
-    imageView.frame = CGRect(origin: CGPoint(), size: frame.size)
+  private class func setupImageView(imageView: UIImageView, size: CGSize) {
+    imageView.frame = CGRect(origin: CGPoint(), size: size)
     imageView.contentMode = UIViewContentMode.ScaleAspectFit
+    imageView.backgroundColor = UIColor.whiteColor()
   }
   
   // Called each time the cell is visible on screen when scrolling.
@@ -68,7 +69,23 @@ class PagedImagesCellView: UIView {
   
   private func imagedDownloadComplete(image: UIImage) {
     url = nil
-    showImage(image)
     downloadTask = nil
+    fadeInImage(image)
+  }
+  
+  private func fadeInImage(image: UIImage) {
+    let downloadedImageView = UIImageView(image: image)
+    addSubview(downloadedImageView)
+    PagedImagesCellView.setupImageView(downloadedImageView, size: frame.size)
+    
+    downloadedImageView.alpha = 0
+    UIView.animateWithDuration(0.2, animations: {
+      downloadedImageView.alpha = 1
+      },
+      completion: { finished in
+        self.showImage(image)
+        downloadedImageView.removeFromSuperview()
+      }
+    )
   }
 }
