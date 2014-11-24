@@ -55,4 +55,8 @@ class PagedImages {
     
     return rightEdge
   }
+  
+  class func subviewVisible(scrollView: UIScrollView, subview: UIView) -> Bool {
+    return CGRectIntersectsRect(scrollView.bounds, subview.frame)
+  }
 }

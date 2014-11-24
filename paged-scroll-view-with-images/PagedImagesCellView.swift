@@ -31,4 +31,9 @@ class PagedImagesCellView: UIView {
     imageView.frame = CGRect(origin: CGPoint(), size: frame.size)
     imageView.contentMode = UIViewContentMode.ScaleAspectFit
   }
+  
+  // Called each time the cell is visible on screen when scrolling. Called frequently.
+  func youAreVisible() {
+    
+  }
 }

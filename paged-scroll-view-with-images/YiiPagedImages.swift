@@ -44,9 +44,17 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
 typealias UIScrollViewDelegate_implementation = YiiPagedImages
 
 extension UIScrollViewDelegate_implementation {
-  func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+  func scrollViewDidScroll(scrollView: UIScrollView) {
     let xOffset = scrollView.contentOffset.x
     let currentPage = Int(xOffset / scrollView.frame.size.width)
     pageControl.currentPage = currentPage
+    
+    var i = 0
+    for subview in scrollView.subviews {
+      if let cell = subview as? PagedImagesCellView {
+        if !PagedImages.subviewVisible(scrollView, subview: cell) { continue }
+        cell.youAreVisible()
+      }
+    }
   }
 }
