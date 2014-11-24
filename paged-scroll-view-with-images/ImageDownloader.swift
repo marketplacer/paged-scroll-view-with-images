@@ -15,13 +15,9 @@ class ImageDownloader {
   func download(url: String, onSuccess: (UIImage)->(),
     onAlways: (()->())? = nil) -> NSURLSessionDataTask? {
       
-    return AsyncDownloaderSession.sharedDownloader.dataWithUrl(url,
+    return TegDownloader.dataWithUrl(url,
       onSuccess: { (data, response) in
-        if let currentResponse = response {
-          self.handleResponse(data, response: currentResponse, onSuccess)
-        } else {
-          self.handleError(onSuccess)
-        }
+        self.handleResponse(data, response: response, onSuccess)
       },
       onAlways: {
         if let onAllwaysArgument = onAlways {

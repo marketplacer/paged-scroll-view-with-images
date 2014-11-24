@@ -28,8 +28,9 @@ class AsyncDownloaderSession {
     session = NSURLSession(configuration: config)
   }
 
-  func dataWithUrl(url: String, onSuccess: (NSData, NSHTTPURLResponse?)->(),
-    onError: ((NSHTTPURLResponse?, NSError)->())? = nil,
+  func dataWithUrl(url: String,
+    onSuccess: (NSData, NSHTTPURLResponse)->(),
+    onError: ((NSError, NSHTTPURLResponse?)->())? = nil,
     onAlways: (()->())? = nil) -> NSURLSessionDataTask? {
 
     if let nsUrl = NSURL(string: url) {
@@ -40,25 +41,19 @@ class AsyncDownloaderSession {
           alwaysHandler()
         }
         
-        let httpResponse = response as? NSHTTPURLResponse
-          
-        if httpResponse == nil {
-          if let errorHandler = onError {
-            errorHandler(httpResponse, error)
+        if let httpResponse = response as? NSHTTPURLResponse {
+          if error == nil {
+            onSuccess(data, httpResponse)
+          } else {
+            if let errorHandler = onError {
+              errorHandler(error, httpResponse)
+            }
           }
-          
-          return
-        }
-
-        if error != nil {
+        } else {
           if let errorHandler = onError {
-            errorHandler(httpResponse, error)
+            errorHandler(error, nil)
           }
-
-          return
         }
-
-        onSuccess(data, httpResponse)
       }
       task.resume()
       return task

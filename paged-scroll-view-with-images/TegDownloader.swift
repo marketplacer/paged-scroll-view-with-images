@@ -12,17 +12,18 @@ import Foundation
 
 class TegDownloader {
 
-  func dataWithUrl(url: String, onSuccess: (NSData, NSHTTPURLResponse?)->(),
-    onError: ((NSHTTPURLResponse?, NSError)->())? = nil,
+  class func dataWithUrl(url: String,
+    onSuccess: (NSData, NSHTTPURLResponse)->(),
+    onError: ((NSError, NSHTTPURLResponse?)->())? = nil,
     onAlways: (()->())? = nil) -> NSURLSessionDataTask? {
 
     return AsyncDownloaderSession.sharedDownloader.dataWithUrl(url,
       onSuccess: { data, response in
         TegQ.main { onSuccess(data, response) }
       },
-      onError: { response, error in
+      onError: { error, response in
         if let currentOnError = onError {
-          TegQ.main { currentOnError(response, error) }
+          TegQ.main { currentOnError(error, response) }
         }
       },
       onAlways: {
