@@ -37,24 +37,38 @@ class PagedImagesCellView: UIView {
   // Called each time the cell is visible on screen when scrolling.
   // Note: called frequently on each scroll event.
   func cellIsVisible() {
+    downloadImage()
+  }
+  
+  // Called when cell is not visible on screen. Opposite of cellIsVisible method
+  func cellIsInvisible() {
+    cancelImageDownload()
+  }
+  
+  private func cancelImageDownload() {
+    if let currentDownloadTask = downloadTask {
+      currentDownloadTask.cancel()
+      downloadTask = nil
+    }
+  }
+  
+  private func downloadImage() {
     if downloadTask != nil { return } // already downloading
     
     if let currentUrl = url {
       let newDownload = ImageDownloadTask(url: currentUrl)
       
       newDownload.download { image in
-        self.showImage(image)
+        self.imagedDownloadComplete(image)
       }
       
       downloadTask = newDownload
     }
   }
   
-  // Called when cell is not visible on screen. Opposite of cellIsVisible method
-  func cellIsInvisible() {
-    if let currentDownloadTask = downloadTask {
-      currentDownloadTask.cancel()
-      downloadTask = nil
-    }
+  private func imagedDownloadComplete(image: UIImage) {
+    url = nil
+    showImage(image)
+    downloadTask = nil
   }
 }
