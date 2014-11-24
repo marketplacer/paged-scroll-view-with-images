@@ -18,6 +18,8 @@
 		2BEDBB921A22B11B0058380D /* elephant.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BEDBB8E1A22B11B0058380D /* elephant.jpg */; };
 		2BEDBB931A22B11B0058380D /* gibbon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BEDBB8F1A22B11B0058380D /* gibbon.jpg */; };
 		2BEDBB941A22B11B0058380D /* hippo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BEDBB901A22B11B0058380D /* hippo.jpg */; };
+		2BEDBB961A22B5AC0058380D /* PagedScrollViewWithImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDBB951A22B5AC0058380D /* PagedScrollViewWithImages.swift */; };
+		2BEDBB991A22B7F40058380D /* TegScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDBB981A22B7F40058380D /* TegScreenSize.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		2BEDBB8E1A22B11B0058380D /* elephant.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = elephant.jpg; sourceTree = "<group>"; };
 		2BEDBB8F1A22B11B0058380D /* gibbon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gibbon.jpg; sourceTree = "<group>"; };
 		2BEDBB901A22B11B0058380D /* hippo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hippo.jpg; sourceTree = "<group>"; };
+		2BEDBB951A22B5AC0058380D /* PagedScrollViewWithImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagedScrollViewWithImages.swift; sourceTree = "<group>"; };
+		2BEDBB981A22B7F40058380D /* TegScreenSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegScreenSize.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,9 +93,11 @@
 			isa = PBXGroup;
 			children = (
 				2BEDBB8C1A22AC820058380D /* Images */,
+				2BEDBB971A22B7E70058380D /* Utils */,
 				2BEDBB6A1A22ABDD0058380D /* AppDelegate.swift */,
 				2BEDBB6C1A22ABDD0058380D /* ViewController.swift */,
 				2BEDBB6E1A22ABDD0058380D /* Main.storyboard */,
+				2BEDBB951A22B5AC0058380D /* PagedScrollViewWithImages.swift */,
 				2BEDBB711A22ABDD0058380D /* Images.xcassets */,
 				2BEDBB731A22ABDD0058380D /* LaunchScreen.xib */,
 				2BEDBB681A22ABDD0058380D /* Supporting Files */,
@@ -133,6 +139,14 @@
 				2BEDBB901A22B11B0058380D /* hippo.jpg */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		2BEDBB971A22B7E70058380D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2BEDBB981A22B7F40058380D /* TegScreenSize.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,7 +194,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0610;
-				ORGANIZATIONNAME = "Evgenii Neumerzhitckii";
+				ORGANIZATIONNAME = "The Exchange Group Pty Ltd";
 				TargetAttributes = {
 					2BEDBB641A22ABDD0058380D = {
 						CreatedOnToolsVersion = 6.1;
@@ -240,6 +254,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BEDBB961A22B5AC0058380D /* PagedScrollViewWithImages.swift in Sources */,
+				2BEDBB991A22B7F40058380D /* TegScreenSize.swift in Sources */,
 				2BEDBB6D1A22ABDD0058380D /* ViewController.swift in Sources */,
 				2BEDBB6B1A22ABDD0058380D /* AppDelegate.swift in Sources */,
 			);
@@ -435,6 +451,7 @@
 				2BEDBB861A22ABDD0058380D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2BEDBB871A22ABDD0058380D /* Build configuration list for PBXNativeTarget "paged-scroll-view-with-imagesTests" */ = {
 			isa = XCConfigurationList;
@@ -443,6 +460,7 @@
 				2BEDBB891A22ABDD0058380D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

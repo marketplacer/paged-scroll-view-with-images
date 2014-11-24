@@ -11,14 +11,6 @@ import UIKit
 var TegScreenSizeScale: CGFloat?
 let tegScreenSizeBounds = UIScreen.mainScreen().bounds
 
-let tegSCreenSizeForDevices = [
-  TegScreenType.iPhone: CGPoint(x: 320, y: 480),
-  TegScreenType.iPhone5: CGPoint(x: 320, y: 568),
-  TegScreenType.iPhone6: CGPoint(x: 375, y: 667),
-  TegScreenType.iPhone6Plus: CGPoint(x: 414, y: 736),
-  TegScreenType.iPad: CGPoint(x: 768, y: 1024)
-]
-
 class TegScreenSize {
   class var minSide: CGFloat {
     let screenSize = tegScreenSizeBounds.size

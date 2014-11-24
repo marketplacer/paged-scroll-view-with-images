@@ -3,7 +3,7 @@
 //  paged-scroll-view-with-images
 //
 //  Created by Evgenii Neumerzhitckii on 24/11/2014.
-//  Copyright (c) 2014 Evgenii Neumerzhitckii. All rights reserved.
+//  Copyright (c) 2014 The Exchange Group Pty Ltd. All rights reserved.
 //
 
 import UIKit
@@ -18,15 +18,18 @@ class ViewController: UIViewController {
   }
 
   private func loadImages() {
+    scrollView.layoutIfNeeded()
+    let imageSize = scrollView.bounds.size
     let imageNames = ["gibbon.jpg", "beaver.jpg", "hippo.jpg", "elephant.jpg"]
-
-    for imageName in imageNames {
-      ViewController.loadImage(imageName, scrollView: scrollView)
-    }
+    PagedScrollViewWithImages.loadImages(imageNames, scrollView: scrollView, imageSize: imageSize)
   }
 
-  private class func loadImage(name: String, scrollView: UIScrollView) {
-    
+  override func shouldAutorotate() -> Bool {
+    return false
+  }
+
+  override func supportedInterfaceOrientations() -> Int {
+    return UIInterfaceOrientation.Portrait.rawValue
   }
 }
 

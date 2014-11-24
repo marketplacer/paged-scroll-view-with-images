@@ -18,9 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="muI-0N-aZY">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="muI-0N-aZY">
                                 <rect key="frame" x="0.0" y="61" width="600" height="450"/>
-                                <color key="backgroundColor" red="1" green="0.89707423050000001" blue="0.1886660412" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="muI-0N-aZY" secondAttribute="height" multiplier="4:3" id="gWU-Aj-X9v"/>
                                 </constraints>
