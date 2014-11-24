@@ -9,17 +9,24 @@
 import UIKit
 
 class ViewController: UIViewController {
+  @IBOutlet weak var scrollView: UIScrollView!
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+
+    loadImages()
   }
 
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  private func loadImages() {
+    let imageNames = ["gibbon.jpg", "beaver.jpg", "hippo.jpg", "elephant.jpg"]
+
+    for imageName in imageNames {
+      ViewController.loadImage(imageName, scrollView: scrollView)
+    }
   }
 
-
+  private class func loadImage(name: String, scrollView: UIScrollView) {
+    
+  }
 }
 
