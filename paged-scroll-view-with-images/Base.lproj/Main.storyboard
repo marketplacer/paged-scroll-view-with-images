@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -26,25 +26,42 @@
                                 </constraints>
                             </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="tra-1A-n2y">
-                                <rect key="frame" x="280.5" y="474" width="39" height="37"/>
+                                <rect key="frame" x="281" y="469" width="39" height="37"/>
                                 <color key="backgroundColor" red="1" green="0.89707423050000001" blue="0.1886660412" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWf-22-EdU">
+                                <rect key="frame" x="214" y="541" width="173" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Load More Images">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadMoreImages:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d5w-bd-8sn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="muI-0N-aZY" secondAttribute="trailing" id="6wP-zZ-N1a"/>
                             <constraint firstItem="muI-0N-aZY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DH0-0Y-AeH"/>
+                            <constraint firstAttribute="centerX" secondItem="FWf-22-EdU" secondAttribute="centerX" id="FJC-Yg-AHC"/>
                             <constraint firstAttribute="centerY" secondItem="muI-0N-aZY" secondAttribute="centerY" constant="14" id="R1h-mb-BLl"/>
                             <constraint firstAttribute="centerX" secondItem="tra-1A-n2y" secondAttribute="centerX" id="Sr8-oe-QTg"/>
-                            <constraint firstItem="muI-0N-aZY" firstAttribute="bottom" secondItem="tra-1A-n2y" secondAttribute="bottom" id="gLD-oL-56b"/>
+                            <constraint firstItem="FWf-22-EdU" firstAttribute="top" secondItem="muI-0N-aZY" secondAttribute="bottom" constant="30" id="bb0-c6-ag6"/>
+                            <constraint firstItem="muI-0N-aZY" firstAttribute="bottom" secondItem="tra-1A-n2y" secondAttribute="bottom" constant="5" id="gLD-oL-56b"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="pageControl" destination="tra-1A-n2y" id="wEp-Gz-YKi"/>
-                        <outlet property="scrollView" destination="muI-0N-aZY" id="cSh-Y7-Q91"/>
+                        <outlet property="images" destination="302-y4-BnC" id="Hgj-Ry-9lM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="302-y4-BnC" customClass="YiiPagedImages" customModule="paged_scroll_view_with_images" customModuleProvider="target">
+                    <connections>
+                        <outlet property="pageControl" destination="tra-1A-n2y" id="wZ3-7r-b5k"/>
+                        <outlet property="scrollView" destination="muI-0N-aZY" id="2eI-6g-KCF"/>
+                    </connections>
+                </customObject>
             </objects>
         </scene>
     </scenes>

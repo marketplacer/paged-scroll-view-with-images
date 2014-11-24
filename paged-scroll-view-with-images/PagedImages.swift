@@ -1,0 +1,54 @@
+//
+//  PagedScrollViewWithImages.swift
+//  paged-scroll-view-with-images
+//
+//  Created by Evgenii Neumerzhitckii on 24/11/2014.
+//  Copyright (c) 2014 The Exchange Group Pty Ltd. All rights reserved.
+//
+
+import UIKit
+
+class PagedImages {
+
+  class func loadImage(image: UIImage, scrollView: UIScrollView, imageSize: CGSize) {
+    let imageView = createImageView()
+    imageView.image = image
+    imageView.frame = CGRect(
+      origin: CGPoint(x: contentRightEdge(scrollView), y:0),
+      size: imageSize)
+    scrollView.addSubview(imageView)
+
+    updateScrollViewContentSize(scrollView)
+  }
+
+  private class func createImageView() -> UIImageView {
+    let imageView = UIImageView()
+    imageView.contentMode = UIViewContentMode.ScaleAspectFit
+    return imageView
+  }
+
+  private class func updateScrollViewContentSize(scrollView: UIScrollView) {
+    var rightEdge = contentRightEdge(scrollView)
+
+    if rightEdge == 0 { return }
+
+    scrollView.contentSize = CGSize(
+      width: rightEdge,
+      height: scrollView.bounds.height)
+  }
+  
+  private class func contentRightEdge(scrollView: UIScrollView) -> CGFloat {
+    var rightEdge: CGFloat = 0
+    
+    for view in scrollView.subviews {
+      if let imageView = view as? UIImageView {
+        let viewsRightEdge = imageView.frame.origin.x + imageView.frame.width
+        if viewsRightEdge > rightEdge {
+          rightEdge = viewsRightEdge
+        }
+      }
+    }
+    
+    return rightEdge
+  }
+}

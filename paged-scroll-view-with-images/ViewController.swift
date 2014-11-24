@@ -8,48 +8,30 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIScrollViewDelegate {
+class ViewController: UIViewController {
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var pageControl: UIPageControl!
 
+  @IBOutlet var images: YiiPagedImages!
+  
+  
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    images.setup()
     loadImages()
-    scrollView.delegate = self
   }
 
   private func loadImages() {
-    scrollView.layoutIfNeeded()
-    let imageSize = scrollView.bounds.size
     let imageNames = ["gibbon.jpg", "beaver.jpg", "hippo.jpg", "elephant.jpg"]
-    PagedScrollViewWithImages.loadImages(imageNames, scrollView: scrollView, imageSize: imageSize)
-
-    setupPageControl(imageNames.count)
+    for name in imageNames {
+      if let currentImage = UIImage(named: name) {
+        images.load(currentImage)
+      }
+    }
   }
-
-  private func setupPageControl(numberOfPages: Int) {
-    pageControl.backgroundColor = nil
-    pageControl.numberOfPages = numberOfPages
-    pageControl.currentPage = 0
-  }
-
-  override func shouldAutorotate() -> Bool {
-    return false
-  }
-
-  override func supportedInterfaceOrientations() -> Int {
-    return UIInterfaceOrientation.Portrait.rawValue
-  }
-}
-
-typealias UIScrollViewDelegate_implementation = ViewController
-
-extension UIScrollViewDelegate_implementation {
-  func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-    let xOffset = scrollView.contentOffset.x
-    let currentPage = Int(xOffset / scrollView.frame.size.width)
-    pageControl.currentPage = currentPage
+  
+  @IBAction func loadMoreImages(sender: AnyObject) {
   }
 }
 
