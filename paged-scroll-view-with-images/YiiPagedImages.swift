@@ -21,6 +21,11 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
     updatePageControl()
   }
   
+  func addUrl(url: String) {
+    PagedImages.addUrl(url, scrollView: scrollView, imageSize: imageSize)
+    updatePageControl()
+  }
+  
   private func updatePageControl() {
     let numberOfPages = scrollView.subviews.count
     pageControl.backgroundColor = nil
@@ -32,7 +37,6 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
     return scrollView.bounds.size
   }
 }
-
 
 // UIScrollViewDelegate
 // --------------------------

@@ -10,6 +10,7 @@ import UIKit
 
 class PagedImagesCellView: UIView {
   private let imageView = UIImageView()
+  var url: String?
   
   override init(frame: CGRect) {
     super.init(frame: frame)

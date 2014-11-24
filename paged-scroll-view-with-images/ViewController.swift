@@ -31,7 +31,17 @@ class ViewController: UIViewController {
     }
   }
   
-  @IBAction func loadMoreImages(sender: AnyObject) {
+  @IBAction func addMoreImages(sender: AnyObject) {
+    let imageUrls = [
+      "http://www.furnitureexchange.com.au/dbimages/bike/fn_large/236/100092236/popup/28-10-2013_10-44-03_AM.jpg",
+      "http://www.tinitrader.com.au/dbimages/bike/fn_large/336/100183336/popup/Digga_Dog140827576653f09536b9c68.jpg",
+      "http://www.renoexchange.com.au//dbimages/bike/fn_large/18/100095018/popup/Hood_and_cabinet.jpg",
+      "http://unknown.com/image_not_exist.jpg"
+    ]
+    
+    for imageUrl in imageUrls {
+      images.addUrl(imageUrl)
+    }
   }
 }
 

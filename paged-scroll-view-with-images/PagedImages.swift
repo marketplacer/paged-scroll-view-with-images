@@ -10,6 +10,16 @@ import UIKit
 
 class PagedImages {
   class func loadImage(image: UIImage, scrollView: UIScrollView, imageSize: CGSize) {
+    let cell = addCell(scrollView, imageSize: imageSize)
+    cell.showImage(image)
+  }
+  
+  class func addUrl(url: String, scrollView: UIScrollView, imageSize: CGSize) {
+    let cell = addCell(scrollView, imageSize: imageSize)
+    cell.url = url
+  }
+  
+  private class func addCell(scrollView: UIScrollView, imageSize: CGSize) -> PagedImagesCellView {
     let cellFrame = CGRect(
       origin: CGPoint(x: contentRightEdge(scrollView), y:0),
       size: imageSize
@@ -17,10 +27,8 @@ class PagedImages {
     
     let cell = PagedImagesCellView(frame: cellFrame)
     scrollView.addSubview(cell)
-    
-    cell.showImage(image)
-
     updateScrollViewContentSize(scrollView)
+    return cell
   }
 
   private class func updateScrollViewContentSize(scrollView: UIScrollView) {

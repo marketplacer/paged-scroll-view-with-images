@@ -30,13 +30,13 @@
                                 <color key="backgroundColor" red="1" green="0.89707423050000001" blue="0.1886660412" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWf-22-EdU">
-                                <rect key="frame" x="214" y="541" width="173" height="38"/>
+                                <rect key="frame" x="218" y="541" width="164" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Load More Images">
+                                <state key="normal" title="Add More Images">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="loadMoreImages:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d5w-bd-8sn"/>
+                                    <action selector="addMoreImages:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F2u-FW-q6c"/>
                                 </connections>
                             </button>
                         </subviews>
