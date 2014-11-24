@@ -9,22 +9,18 @@
 import UIKit
 
 class PagedImages {
-
   class func loadImage(image: UIImage, scrollView: UIScrollView, imageSize: CGSize) {
-    let imageView = createImageView()
-    imageView.image = image
-    imageView.frame = CGRect(
+    let cellFrame = CGRect(
       origin: CGPoint(x: contentRightEdge(scrollView), y:0),
-      size: imageSize)
-    scrollView.addSubview(imageView)
+      size: imageSize
+    )
+    
+    let cell = PagedImagesCellView(frame: cellFrame)
+    scrollView.addSubview(cell)
+    
+    cell.showImage(image)
 
     updateScrollViewContentSize(scrollView)
-  }
-
-  private class func createImageView() -> UIImageView {
-    let imageView = UIImageView()
-    imageView.contentMode = UIViewContentMode.ScaleAspectFit
-    return imageView
   }
 
   private class func updateScrollViewContentSize(scrollView: UIScrollView) {
@@ -41,8 +37,8 @@ class PagedImages {
     var rightEdge: CGFloat = 0
     
     for view in scrollView.subviews {
-      if let imageView = view as? UIImageView {
-        let viewsRightEdge = imageView.frame.origin.x + imageView.frame.width
+      if let cellView = view as? PagedImagesCellView {
+        let viewsRightEdge = cellView.frame.origin.x + cellView.frame.width
         if viewsRightEdge > rightEdge {
           rightEdge = viewsRightEdge
         }
