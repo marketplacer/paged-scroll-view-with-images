@@ -12,21 +12,13 @@ import UIKit
 class ImageDownloadTask {
   private var url: String
   private var downloadTask: NSURLSessionDataTask?
-  var image:UIImage?
   
-  init(imageUrl: String) {
-    self.url = imageUrl
+  init(url: String) {
+    self.url = url
   }
   
   func download(onSuccess: (UIImage)->()) {
     if downloadTask != nil { return } // download already in progress
-    
-    if let currentImage = image {
-      // Image has been already downloaded
-      onSuccess(currentImage)
-      return
-    }
- 
     startDownloading(onSuccess)
   }
   

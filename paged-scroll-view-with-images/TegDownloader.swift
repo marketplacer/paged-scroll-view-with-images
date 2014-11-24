@@ -11,7 +11,6 @@
 import Foundation
 
 class TegDownloader {
-
   class func dataWithUrl(url: String,
     onSuccess: (NSData, NSHTTPURLResponse)->(),
     onError: ((NSError, NSHTTPURLResponse?)->())? = nil,

@@ -52,8 +52,11 @@ extension UIScrollViewDelegate_implementation {
     var i = 0
     for subview in scrollView.subviews {
       if let cell = subview as? PagedImagesCellView {
-        if !PagedImages.subviewVisible(scrollView, subview: cell) { continue }
-        cell.youAreVisible()
+        if PagedImages.subviewVisible(scrollView, subview: cell) {
+          cell.cellIsVisible()
+        } else {
+          cell.cellIsInvisible()
+        }
       }
     }
   }

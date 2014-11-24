@@ -34,6 +34,7 @@ class AsyncDownloaderSession {
     onAlways: (()->())? = nil) -> NSURLSessionDataTask? {
 
     if let nsUrl = NSURL(string: url) {
+      println("HTTP GET \(url)")
       var task = session.dataTaskWithURL(nsUrl) {
         (data, response, error) in
 
