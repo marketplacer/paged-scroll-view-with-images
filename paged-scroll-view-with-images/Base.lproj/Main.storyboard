@@ -18,22 +18,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="muI-0N-aZY">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="muI-0N-aZY">
                                 <rect key="frame" x="0.0" y="61" width="600" height="450"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="muI-0N-aZY" secondAttribute="height" multiplier="4:3" id="gWU-Aj-X9v"/>
                                 </constraints>
                             </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="tra-1A-n2y">
+                                <rect key="frame" x="280.5" y="474" width="39" height="37"/>
+                                <color key="backgroundColor" red="1" green="0.89707423050000001" blue="0.1886660412" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="muI-0N-aZY" secondAttribute="trailing" id="6wP-zZ-N1a"/>
                             <constraint firstItem="muI-0N-aZY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DH0-0Y-AeH"/>
                             <constraint firstAttribute="centerY" secondItem="muI-0N-aZY" secondAttribute="centerY" constant="14" id="R1h-mb-BLl"/>
+                            <constraint firstAttribute="centerX" secondItem="tra-1A-n2y" secondAttribute="centerX" id="Sr8-oe-QTg"/>
+                            <constraint firstItem="muI-0N-aZY" firstAttribute="bottom" secondItem="tra-1A-n2y" secondAttribute="bottom" id="gLD-oL-56b"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="pageControl" destination="tra-1A-n2y" id="wEp-Gz-YKi"/>
                         <outlet property="scrollView" destination="muI-0N-aZY" id="cSh-Y7-Q91"/>
                     </connections>
                 </viewController>
