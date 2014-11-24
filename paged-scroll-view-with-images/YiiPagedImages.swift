@@ -12,6 +12,8 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var pageControl: UIPageControl!
   
+  var placeholderImageName = "paged-scroll-view-with-images-placeholder.jpg"
+  
   func setup() {
     scrollView.delegate = self
   }
@@ -22,7 +24,9 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
   }
   
   func addUrl(url: String) {
-    PagedImages.addUrl(url, scrollView: scrollView, imageSize: imageSize)
+    PagedImages.addUrl(url, scrollView: scrollView, imageSize: imageSize,
+      placeholderImage: placeholderImage)
+    
     updatePageControl()
   }
   
@@ -35,6 +39,10 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
   private var imageSize: CGSize {
     scrollView.layoutIfNeeded()
     return scrollView.bounds.size
+  }
+  
+  private var placeholderImage: UIImage? {
+    return UIImage(named: placeholderImageName)
   }
 }
 

@@ -14,8 +14,13 @@ class PagedImages {
     cell.showImage(image)
   }
   
-  class func addUrl(url: String, scrollView: UIScrollView, imageSize: CGSize) {
+  class func addUrl(url: String, scrollView: UIScrollView, imageSize: CGSize, placeholderImage: UIImage?) {
     let cell = addCell(scrollView, imageSize: imageSize)
+    
+    if let currentPlaceholderImage = placeholderImage {
+      cell.showImage(currentPlaceholderImage)
+    }
+    
     cell.url = url
   }
   

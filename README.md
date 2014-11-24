@@ -14,3 +14,5 @@ Photos are taken from following sources:
 **Hippo**: http://www.freeimages.com/photo/1354132
 
 **Elephant**: http://www.freeimages.com/photo/1352145
+
+**Leaves** http://www.freeimages.com/photo/1445006?forcedownload=1
