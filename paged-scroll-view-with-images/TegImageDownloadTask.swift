@@ -35,6 +35,7 @@ class TegImageDownloadTask {
   
   func cancel() {
     if let currentDownloadTask = downloadTask {
+      println("!!!!!!!!!!!!!! CANCELLED !!!!!!!!!!!!!!")
       currentDownloadTask.cancel()
       downloadTask = nil
     }
