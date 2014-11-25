@@ -11,6 +11,7 @@ import UIKit
 class YiiPagedImages: NSObject, UIScrollViewDelegate {
   @IBOutlet weak var scrollView: UIScrollView!
   private let pageControl = UIPageControl()
+  private let pagedControlContainer = TegPagedControlContainer()
 
   var placeholderImageName = "paged-scroll-view-with-images-placeholder.jpg"
 
@@ -38,15 +39,17 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
   
   private func setupPageControl() {
     if let currentSuperview = scrollView.superview {
-      pageControl.setTranslatesAutoresizingMaskIntoConstraints(false)
-      currentSuperview.addSubview(pageControl)
       
-      TegAutolayoutConstraints.alignSameAttributes(pageControl, viewTwo: scrollView, constraintContainer: currentSuperview, attribute: NSLayoutAttribute.Bottom, margin: 5)
+      currentSuperview.addSubview(pagedControlContainer)
+      pagedControlContainer.addSubview(pageControl)
       
-      TegAutolayoutConstraints.centerX(pageControl, viewTwo: scrollView, constraintContainer: currentSuperview)
+      pagedControlContainer.setTranslatesAutoresizingMaskIntoConstraints(false)
+      
+      TegAutolayoutConstraints.alignSameAttributes(pagedControlContainer, viewTwo: scrollView, constraintContainer: currentSuperview, attribute: NSLayoutAttribute.Bottom, margin: 5)
+      
+      TegAutolayoutConstraints.centerX(pagedControlContainer, viewTwo: scrollView, constraintContainer: currentSuperview)
     }
   }
-    
 
   private var imageSize: CGSize {
     scrollView.layoutIfNeeded()
@@ -60,6 +63,7 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
   private func updateNumberOfPages() {
     let numberOfPages = scrollView.subviews.count
     pageControl.numberOfPages = numberOfPages
+    pagedControlContainer.invalidateIntrinsicContentSize()
   }
 
   private func updateCurrentPage() {

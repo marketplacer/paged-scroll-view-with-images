@@ -13,6 +13,7 @@
 		2B51086B1A23EFEC006C029B /* no_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B51086A1A23EFEC006C029B /* no_image.jpg */; };
 		2B5108711A23FF8B006C029B /* paged-scroll-view-with-images-placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B5108701A23FF8B006C029B /* paged-scroll-view-with-images-placeholder.jpg */; };
 		2B5108731A24328B006C029B /* TegAutolayoutConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5108721A24328B006C029B /* TegAutolayoutConstraints.swift */; };
+		2B5108751A24363D006C029B /* TegPagedControlContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5108741A24363D006C029B /* TegPagedControlContainer.swift */; };
 		2B69859C1A240A7C002FDEC0 /* TegAsyncImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6985991A240A7C002FDEC0 /* TegAsyncImageDownloader.swift */; };
 		2B69859D1A240A7C002FDEC0 /* TegImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69859A1A240A7C002FDEC0 /* TegImageDownloader.swift */; };
 		2B69859E1A240A7C002FDEC0 /* TegImageDownloadTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69859B1A240A7C002FDEC0 /* TegImageDownloadTask.swift */; };
@@ -50,6 +51,7 @@
 		2B51086A1A23EFEC006C029B /* no_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = no_image.jpg; sourceTree = "<group>"; };
 		2B5108701A23FF8B006C029B /* paged-scroll-view-with-images-placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "paged-scroll-view-with-images-placeholder.jpg"; sourceTree = "<group>"; };
 		2B5108721A24328B006C029B /* TegAutolayoutConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegAutolayoutConstraints.swift; sourceTree = "<group>"; };
+		2B5108741A24363D006C029B /* TegPagedControlContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegPagedControlContainer.swift; sourceTree = "<group>"; };
 		2B6985991A240A7C002FDEC0 /* TegAsyncImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegAsyncImageDownloader.swift; sourceTree = "<group>"; };
 		2B69859A1A240A7C002FDEC0 /* TegImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegImageDownloader.swift; sourceTree = "<group>"; };
 		2B69859B1A240A7C002FDEC0 /* TegImageDownloadTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegImageDownloadTask.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 		2B51085A1A22FC47006C029B /* PagesImageScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				2B5108741A24363D006C029B /* TegPagedControlContainer.swift */,
 				2BEDBB951A22B5AC0058380D /* TegPagedImages.swift */,
 				2B51085D1A230191006C029B /* TegPagedImagesCellView.swift */,
 				2B51085B1A22FC8C006C029B /* YiiPagedImages.swift */,
@@ -320,6 +323,7 @@
 				2B5108671A23E684006C029B /* TegQ.swift in Sources */,
 				2B51085C1A22FC8C006C029B /* YiiPagedImages.swift in Sources */,
 				2B6985AE1A241E5A002FDEC0 /* README.md in Sources */,
+				2B5108751A24363D006C029B /* TegPagedControlContainer.swift in Sources */,
 				2BEDBB6D1A22ABDD0058380D /* ViewController.swift in Sources */,
 				2B69859D1A240A7C002FDEC0 /* TegImageDownloader.swift in Sources */,
 				2B51085E1A230191006C029B /* TegPagedImagesCellView.swift in Sources */,
