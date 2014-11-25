@@ -26,13 +26,14 @@ class PagedImagesCellView: UIView {
   }
   
   func showImage(image: UIImage) {
+    imageView.alpha = 1
     imageView.image = image
   }
   
   private class func setupImageView(imageView: UIImageView, size: CGSize) {
     imageView.frame = CGRect(origin: CGPoint(), size: size)
     imageView.contentMode = UIViewContentMode.ScaleAspectFit
-    imageView.backgroundColor = UIColor.whiteColor()
+//    imageView.backgroundColor = UIColor.whiteColor()
   }
   
   // Called each time the cell is visible on screen when scrolling.
@@ -80,7 +81,8 @@ class PagedImagesCellView: UIView {
     
     downloadedImageView.alpha = 0
     UIView.animateWithDuration(0.2, animations: {
-      downloadedImageView.alpha = 1
+        downloadedImageView.alpha = 1
+        self.imageView.alpha = 0
       },
       completion: { finished in
         self.showImage(image)
