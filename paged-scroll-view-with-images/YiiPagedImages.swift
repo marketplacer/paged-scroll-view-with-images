@@ -11,38 +11,56 @@ import UIKit
 class YiiPagedImages: NSObject, UIScrollViewDelegate {
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var pageControl: UIPageControl!
-  
+
   var placeholderImageName = "paged-scroll-view-with-images-placeholder.jpg"
-  
+
   func setup() {
     scrollView.delegate = self
+    pageControl.backgroundColor = nil
   }
-  
+
   func load(image: UIImage) {
     TegPagedImages.loadImage(image, scrollView: scrollView, imageSize: imageSize)
-    updatePageControl()
+    updateNumberOfPages()
   }
-  
+
   func addUrl(url: String) {
     TegPagedImages.addUrl(url, scrollView: scrollView, imageSize: imageSize,
       placeholderImage: placeholderImage)
-    
-    updatePageControl()
+
+    updateNumberOfPages()
   }
-  
-  private func updatePageControl() {
-    let numberOfPages = scrollView.subviews.count
-    pageControl.backgroundColor = nil
-    pageControl.numberOfPages = numberOfPages
-  }
-  
+
   private var imageSize: CGSize {
     scrollView.layoutIfNeeded()
     return scrollView.bounds.size
   }
-  
+
   private var placeholderImage: UIImage? {
     return UIImage(named: placeholderImageName)
+  }
+
+  private func updateNumberOfPages() {
+    let numberOfPages = scrollView.subviews.count
+    pageControl.numberOfPages = numberOfPages
+  }
+
+  private func updateCurrentPage() {
+    let xOffset = scrollView.contentOffset.x
+    let currentPage = Int(xOffset / scrollView.frame.size.width)
+    pageControl.currentPage = currentPage
+  }
+
+  private func notifyCellAboutTheirVisibility() {
+    for subview in scrollView.subviews {
+      if let cell = subview as? TegPagedImagesCellView {
+        if TegPagedImages.subviewVisible(scrollView, subview: cell) {
+          cell.cellIsVisible()
+        } else {
+          cell.cellIsInvisible()
+        }
+      }
+    }
   }
 }
 
@@ -53,19 +71,7 @@ typealias UIScrollViewDelegate_implementation = YiiPagedImages
 
 extension UIScrollViewDelegate_implementation {
   func scrollViewDidScroll(scrollView: UIScrollView) {
-    let xOffset = scrollView.contentOffset.x
-    let currentPage = Int(xOffset / scrollView.frame.size.width)
-    pageControl.currentPage = currentPage
-    
-    var i = 0
-    for subview in scrollView.subviews {
-      if let cell = subview as? TegPagedImagesCellView {
-        if TegPagedImages.subviewVisible(scrollView, subview: cell) {
-          cell.cellIsVisible()
-        } else {
-          cell.cellIsInvisible()
-        }
-      }
-    }
+    updateCurrentPage()
+    notifyCellAboutTheirVisibility()
   }
 }

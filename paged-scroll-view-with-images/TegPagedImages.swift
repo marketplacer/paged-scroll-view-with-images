@@ -13,23 +13,23 @@ class TegPagedImages {
     let cell = addCell(scrollView, imageSize: imageSize)
     cell.showImage(image)
   }
-  
+
   class func addUrl(url: String, scrollView: UIScrollView, imageSize: CGSize, placeholderImage: UIImage?) {
     let cell = addCell(scrollView, imageSize: imageSize)
-    
+
     if let currentPlaceholderImage = placeholderImage {
       cell.showImage(currentPlaceholderImage)
     }
-    
+
     cell.url = url
   }
-  
+
   private class func addCell(scrollView: UIScrollView, imageSize: CGSize) -> TegPagedImagesCellView {
     let cellFrame = CGRect(
       origin: CGPoint(x: contentRightEdge(scrollView), y:0),
       size: imageSize
     )
-    
+
     let cell = TegPagedImagesCellView(frame: cellFrame)
     scrollView.addSubview(cell)
     updateScrollViewContentSize(scrollView)
@@ -45,10 +45,10 @@ class TegPagedImages {
       width: rightEdge,
       height: scrollView.bounds.height)
   }
-  
+
   private class func contentRightEdge(scrollView: UIScrollView) -> CGFloat {
     var rightEdge: CGFloat = 0
-    
+
     for view in scrollView.subviews {
       if let cellView = view as? TegPagedImagesCellView {
         let viewsRightEdge = cellView.frame.origin.x + cellView.frame.width
@@ -57,10 +57,10 @@ class TegPagedImages {
         }
       }
     }
-    
+
     return rightEdge
   }
-  
+
   class func subviewVisible(scrollView: UIScrollView, subview: UIView) -> Bool {
     return CGRectIntersectsRect(scrollView.bounds, subview.frame)
   }
