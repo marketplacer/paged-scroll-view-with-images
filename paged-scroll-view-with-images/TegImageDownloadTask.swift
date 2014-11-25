@@ -9,7 +9,7 @@
 
 import UIKit
 
-class ImageDownloadTask {
+class TegImageDownloadTask {
   private var url: String
   private var downloadTask: NSURLSessionDataTask?
   
@@ -23,7 +23,7 @@ class ImageDownloadTask {
   }
   
   private func startDownloading(onSuccess: (UIImage)->()) {
-    downloadTask = ImageDownloader.download(url,
+    downloadTask = TegImageDownloader.download(url,
       onSuccess: { image in
         onSuccess(image)
       },

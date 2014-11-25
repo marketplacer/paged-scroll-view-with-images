@@ -4,23 +4,25 @@
 //  Downloads image from server.
 //  If image is not found it still called onSuccess callback with 'no image' placeholder image.
 //
+//  Callbacks are called asynchronously and NOT in the main queue.
+//
 //  Created by Evgenii Neumerzhitckii on 5/09/2014.
 //  Copyright (c) 2014 The Exchange Group Pty Ltd. All rights reserved.
 //
 
 import UIKit
 
-class ImageDownloader {
+class TegAsyncImageDownloader {
   class func download(url: String, onSuccess: (UIImage)->(),
     onAlways: (()->())? = nil) -> NSURLSessionDataTask? {
       
-    return TegDownloader.dataWithUrl(url,
+    return TegAsyncDownloaderSession.shared.dataWithUrl(url,
       onSuccess: { (data, response) in
         self.handleResponse(data, response: response, onSuccess)
       },
       onAlways: {
         if let onAllwaysArgument = onAlways {
-          TegQ.main { onAllwaysArgument() }
+          onAllwaysArgument()
         }
       }
     )
@@ -48,13 +50,13 @@ class ImageDownloader {
     }
     
     if let image = UIImage(data: data) {
-      TegQ.main { callback(image) }
+      callback(image)
     }
   }
   
   class private func handleError(callback: (UIImage)->()) {
     if let image = UIImage(named: "no_image.jpg") {
-       TegQ.main { callback(image) }
+      callback(image)
     }
   }
 }

@@ -12,7 +12,7 @@ class PagedImagesCellView: UIView {
   var url: String?
   
   private let imageView = UIImageView()
-  private var downloadTask: ImageDownloadTask?
+  private var downloadTask: TegImageDownloadTask?
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -58,7 +58,7 @@ class PagedImagesCellView: UIView {
     if downloadTask != nil { return } // already downloading
     
     if let currentUrl = url {
-      let newDownload = ImageDownloadTask(url: currentUrl)
+      let newDownload = TegImageDownloadTask(url: currentUrl)
       
       newDownload.download { image in
         self.imagedDownloadComplete(image)

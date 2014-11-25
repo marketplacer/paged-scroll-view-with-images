@@ -4,7 +4,7 @@
 //  Singleton session object for downloading files.
 //  Callbacks are called asynchronously and NOT in the main queue.
 //
-//  Use DownloaderSession.sharedDownloader to get the instance.
+//  Use TegAsyncDownloaderSession.shared to get the instance.
 //
 //  Created by Evgenii Neumerzhitckii on 21/08/2014.
 //  Copyright (c) 2014 The Exchange Group Pty Ltd. All rights reserved.
@@ -12,13 +12,13 @@
 
 import Foundation
 
-private let _sharedAsyncDownloader = AsyncDownloaderSession()
+private let tegSharedAsyncDownloader = TegAsyncDownloaderSession()
 
-class AsyncDownloaderSession {
+class TegAsyncDownloaderSession {
   private let session: NSURLSession!
 
-  class var sharedDownloader: AsyncDownloaderSession {
-    return _sharedAsyncDownloader
+  class var shared: TegAsyncDownloaderSession {
+    return tegSharedAsyncDownloader
   }
 
   // Private initializer since this is a singleton class
