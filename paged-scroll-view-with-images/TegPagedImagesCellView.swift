@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PagedImagesCellView: UIView {
+class TegPagedImagesCellView: UIView {
   var url: String?
   
   private let imageView = UIImageView()
@@ -17,7 +17,7 @@ class PagedImagesCellView: UIView {
   override init(frame: CGRect) {
     super.init(frame: frame)
     
-    PagedImagesCellView.setupImageView(imageView, size: frame.size)
+    TegPagedImagesCellView.setupImageView(imageView, size: frame.size)
     addSubview(imageView)
   }
 
@@ -33,7 +33,6 @@ class PagedImagesCellView: UIView {
   private class func setupImageView(imageView: UIImageView, size: CGSize) {
     imageView.frame = CGRect(origin: CGPoint(), size: size)
     imageView.contentMode = UIViewContentMode.ScaleAspectFit
-//    imageView.backgroundColor = UIColor.whiteColor()
   }
   
   // Called each time the cell is visible on screen when scrolling.
@@ -77,7 +76,7 @@ class PagedImagesCellView: UIView {
   private func fadeInImage(image: UIImage) {
     let downloadedImageView = UIImageView(image: image)
     addSubview(downloadedImageView)
-    PagedImagesCellView.setupImageView(downloadedImageView, size: frame.size)
+    TegPagedImagesCellView.setupImageView(downloadedImageView, size: frame.size)
     
     downloadedImageView.alpha = 0
     UIView.animateWithDuration(0.2, animations: {

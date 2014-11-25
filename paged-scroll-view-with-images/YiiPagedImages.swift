@@ -19,12 +19,12 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
   }
   
   func load(image: UIImage) {
-    PagedImages.loadImage(image, scrollView: scrollView, imageSize: imageSize)
+    TegPagedImages.loadImage(image, scrollView: scrollView, imageSize: imageSize)
     updatePageControl()
   }
   
   func addUrl(url: String) {
-    PagedImages.addUrl(url, scrollView: scrollView, imageSize: imageSize,
+    TegPagedImages.addUrl(url, scrollView: scrollView, imageSize: imageSize,
       placeholderImage: placeholderImage)
     
     updatePageControl()
@@ -59,8 +59,8 @@ extension UIScrollViewDelegate_implementation {
     
     var i = 0
     for subview in scrollView.subviews {
-      if let cell = subview as? PagedImagesCellView {
-        if PagedImages.subviewVisible(scrollView, subview: cell) {
+      if let cell = subview as? TegPagedImagesCellView {
+        if TegPagedImages.subviewVisible(scrollView, subview: cell) {
           cell.cellIsVisible()
         } else {
           cell.cellIsInvisible()

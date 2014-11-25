@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B51085C1A22FC8C006C029B /* YiiPagedImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51085B1A22FC8C006C029B /* YiiPagedImages.swift */; };
-		2B51085E1A230191006C029B /* PagedImagesCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51085D1A230191006C029B /* PagedImagesCellView.swift */; };
+		2B51085E1A230191006C029B /* TegPagedImagesCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51085D1A230191006C029B /* TegPagedImagesCellView.swift */; };
 		2B5108671A23E684006C029B /* TegQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5108661A23E684006C029B /* TegQ.swift */; };
 		2B51086B1A23EFEC006C029B /* no_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B51086A1A23EFEC006C029B /* no_image.jpg */; };
 		2B5108711A23FF8B006C029B /* paged-scroll-view-with-images-placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B5108701A23FF8B006C029B /* paged-scroll-view-with-images-placeholder.jpg */; };
@@ -27,7 +27,7 @@
 		2BEDBB921A22B11B0058380D /* elephant.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BEDBB8E1A22B11B0058380D /* elephant.jpg */; };
 		2BEDBB931A22B11B0058380D /* gibbon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BEDBB8F1A22B11B0058380D /* gibbon.jpg */; };
 		2BEDBB941A22B11B0058380D /* hippo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BEDBB901A22B11B0058380D /* hippo.jpg */; };
-		2BEDBB961A22B5AC0058380D /* PagedImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDBB951A22B5AC0058380D /* PagedImages.swift */; };
+		2BEDBB961A22B5AC0058380D /* TegPagedImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDBB951A22B5AC0058380D /* TegPagedImages.swift */; };
 		2BEDBB991A22B7F40058380D /* TegScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDBB981A22B7F40058380D /* TegScreenSize.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +43,7 @@
 
 /* Begin PBXFileReference section */
 		2B51085B1A22FC8C006C029B /* YiiPagedImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YiiPagedImages.swift; sourceTree = "<group>"; };
-		2B51085D1A230191006C029B /* PagedImagesCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagedImagesCellView.swift; sourceTree = "<group>"; };
+		2B51085D1A230191006C029B /* TegPagedImagesCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegPagedImagesCellView.swift; sourceTree = "<group>"; };
 		2B5108661A23E684006C029B /* TegQ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegQ.swift; sourceTree = "<group>"; };
 		2B51086A1A23EFEC006C029B /* no_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = no_image.jpg; sourceTree = "<group>"; };
 		2B5108701A23FF8B006C029B /* paged-scroll-view-with-images-placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "paged-scroll-view-with-images-placeholder.jpg"; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 		2BEDBB8E1A22B11B0058380D /* elephant.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = elephant.jpg; sourceTree = "<group>"; };
 		2BEDBB8F1A22B11B0058380D /* gibbon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gibbon.jpg; sourceTree = "<group>"; };
 		2BEDBB901A22B11B0058380D /* hippo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hippo.jpg; sourceTree = "<group>"; };
-		2BEDBB951A22B5AC0058380D /* PagedImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagedImages.swift; sourceTree = "<group>"; };
+		2BEDBB951A22B5AC0058380D /* TegPagedImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegPagedImages.swift; sourceTree = "<group>"; };
 		2BEDBB981A22B7F40058380D /* TegScreenSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegScreenSize.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,9 +91,8 @@
 		2B51085A1A22FC47006C029B /* PagesImageScrollView */ = {
 			isa = PBXGroup;
 			children = (
-				2B5108631A23E195006C029B /* Http */,
-				2BEDBB951A22B5AC0058380D /* PagedImages.swift */,
-				2B51085D1A230191006C029B /* PagedImagesCellView.swift */,
+				2BEDBB951A22B5AC0058380D /* TegPagedImages.swift */,
+				2B51085D1A230191006C029B /* TegPagedImagesCellView.swift */,
 				2B51085B1A22FC8C006C029B /* YiiPagedImages.swift */,
 			);
 			name = PagesImageScrollView;
@@ -141,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				2BEDBB8C1A22AC820058380D /* Images */,
+				2B5108631A23E195006C029B /* Http */,
 				2B51085A1A22FC47006C029B /* PagesImageScrollView */,
 				2BEDBB971A22B7E70058380D /* Utils */,
 				2BEDBB6A1A22ABDD0058380D /* AppDelegate.swift */,
@@ -308,14 +308,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B69859C1A240A7C002FDEC0 /* TegAsyncImageDownloader.swift in Sources */,
-				2BEDBB961A22B5AC0058380D /* PagedImages.swift in Sources */,
+				2BEDBB961A22B5AC0058380D /* TegPagedImages.swift in Sources */,
 				2B6985A01A240A82002FDEC0 /* TegAsyncDownloaderSession.swift in Sources */,
 				2BEDBB991A22B7F40058380D /* TegScreenSize.swift in Sources */,
 				2B5108671A23E684006C029B /* TegQ.swift in Sources */,
 				2B51085C1A22FC8C006C029B /* YiiPagedImages.swift in Sources */,
 				2BEDBB6D1A22ABDD0058380D /* ViewController.swift in Sources */,
 				2B69859D1A240A7C002FDEC0 /* TegImageDownloader.swift in Sources */,
-				2B51085E1A230191006C029B /* PagedImagesCellView.swift in Sources */,
+				2B51085E1A230191006C029B /* TegPagedImagesCellView.swift in Sources */,
 				2BEDBB6B1A22ABDD0058380D /* AppDelegate.swift in Sources */,
 				2B69859E1A240A7C002FDEC0 /* TegImageDownloadTask.swift in Sources */,
 			);

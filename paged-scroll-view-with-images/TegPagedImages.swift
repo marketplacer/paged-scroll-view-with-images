@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PagedImages {
+class TegPagedImages {
   class func loadImage(image: UIImage, scrollView: UIScrollView, imageSize: CGSize) {
     let cell = addCell(scrollView, imageSize: imageSize)
     cell.showImage(image)
@@ -24,13 +24,13 @@ class PagedImages {
     cell.url = url
   }
   
-  private class func addCell(scrollView: UIScrollView, imageSize: CGSize) -> PagedImagesCellView {
+  private class func addCell(scrollView: UIScrollView, imageSize: CGSize) -> TegPagedImagesCellView {
     let cellFrame = CGRect(
       origin: CGPoint(x: contentRightEdge(scrollView), y:0),
       size: imageSize
     )
     
-    let cell = PagedImagesCellView(frame: cellFrame)
+    let cell = TegPagedImagesCellView(frame: cellFrame)
     scrollView.addSubview(cell)
     updateScrollViewContentSize(scrollView)
     return cell
@@ -50,7 +50,7 @@ class PagedImages {
     var rightEdge: CGFloat = 0
     
     for view in scrollView.subviews {
-      if let cellView = view as? PagedImagesCellView {
+      if let cellView = view as? TegPagedImagesCellView {
         let viewsRightEdge = cellView.frame.origin.x + cellView.frame.width
         if viewsRightEdge > rightEdge {
           rightEdge = viewsRightEdge
