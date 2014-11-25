@@ -10,7 +10,7 @@ import UIKit
 
 class YiiPagedImages: NSObject, UIScrollViewDelegate {
   @IBOutlet weak var scrollView: UIScrollView!
-  @IBOutlet weak var pageControl: UIPageControl!
+  private let pageControl = UIPageControl()
 
   var placeholderImageName = "paged-scroll-view-with-images-placeholder.jpg"
 
@@ -21,6 +21,7 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
   func setup() {
     scrollView.delegate = self
     pageControl.backgroundColor = nil
+    setupPageControl()
   }
 
   func load(image: UIImage) {
@@ -34,6 +35,18 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
 
     updateNumberOfPages()
   }
+  
+  private func setupPageControl() {
+    if let currentSuperview = scrollView.superview {
+      pageControl.setTranslatesAutoresizingMaskIntoConstraints(false)
+      currentSuperview.addSubview(pageControl)
+      
+      TegAutolayoutConstraints.alignSameAttributes(pageControl, viewTwo: scrollView, constraintContainer: currentSuperview, attribute: NSLayoutAttribute.Bottom, margin: 5)
+      
+      TegAutolayoutConstraints.centerX(pageControl, viewTwo: scrollView, constraintContainer: currentSuperview)
+    }
+  }
+    
 
   private var imageSize: CGSize {
     scrollView.layoutIfNeeded()
