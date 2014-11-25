@@ -46,7 +46,7 @@ class TegPagedImagesCellView: UIView {
     cancelImageDownload()
   }
 
-  private func cancelImageDownload() {
+  func cancelImageDownload() {
     if let currentDownloadTask = downloadTask {
       currentDownloadTask.cancel()
       downloadTask = nil

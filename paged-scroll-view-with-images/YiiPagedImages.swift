@@ -14,6 +14,10 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
 
   var placeholderImageName = "paged-scroll-view-with-images-placeholder.jpg"
 
+  deinit {
+    cancelImageDownloads()
+  }
+  
   func setup() {
     scrollView.delegate = self
     pageControl.backgroundColor = nil
@@ -52,20 +56,28 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
   }
 
   private func notifyCellAboutTheirVisibility() {
-    for subview in scrollView.subviews {
-      if let cell = subview as? TegPagedImagesCellView {
-        if TegPagedImages.subviewVisible(scrollView, subview: cell) {
-          cell.cellIsVisible()
-        } else {
-          if !TegPagedImages.isSubviewNearScreenEdge(scrollView, subview: cell) {
-            // Do not send 'invisible' message to cell if it is still nearby
-            // This prevents cancelling download for the cell that was shown for a moment
-            // with spring animation
-            cell.cellIsInvisible()
-          }
+    for cell in cellViews {
+      if TegPagedImages.subviewVisible(scrollView, subview: cell) {
+        cell.cellIsVisible()
+      } else {
+        if !TegPagedImages.isSubviewNearScreenEdge(scrollView, subview: cell) {
+          // Do not send 'invisible' message to cell if it is still nearby
+          // This prevents cancelling download for the cell that was shown for a moment
+          // with spring animation
+          cell.cellIsInvisible()
         }
       }
     }
+  }
+  
+  private func cancelImageDownloads() {
+    for cell in cellViews {
+      cell.cancelImageDownload()
+    }
+  }
+  
+  private var cellViews: [TegPagedImagesCellView] {
+    return scrollView.subviews.filter { return $0 is TegPagedImagesCellView }.map { $0 as TegPagedImagesCellView }
   }
 }
 
