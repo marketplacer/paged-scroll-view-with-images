@@ -64,4 +64,24 @@ class TegPagedImages {
   class func subviewVisible(scrollView: UIScrollView, subview: UIView) -> Bool {
     return CGRectIntersectsRect(scrollView.bounds, subview.frame)
   }
+  
+  // When subview is offscreen, is it offscreen by a little?
+  // This is used in order NOT to cancel download for cells
+  // when scroll view animation overshoots a bit
+  // and shows the edge of next cell
+  class func isSubviewNearScreenEdge(scrollView: UIScrollView, subview: UIView) -> Bool {
+    let maxOffscreenDistance: CGFloat = 50
+    
+    // subview is to the right of the visible viewport
+    if subview.frame.minX > scrollView.bounds.maxX {
+      return abs(subview.frame.minX - scrollView.bounds.maxX) < maxOffscreenDistance
+    }
+    
+    // subview is to the left of the visible viewport
+    if subview.frame.maxX < scrollView.bounds.minX {
+      return abs(scrollView.bounds.minX - subview.frame.maxX) < maxOffscreenDistance
+    }
+    
+    return true
+  }
 }

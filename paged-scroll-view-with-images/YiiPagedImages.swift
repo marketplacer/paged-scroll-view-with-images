@@ -57,7 +57,12 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
         if TegPagedImages.subviewVisible(scrollView, subview: cell) {
           cell.cellIsVisible()
         } else {
-          cell.cellIsInvisible()
+          if !TegPagedImages.isSubviewNearScreenEdge(scrollView, subview: cell) {
+            // Do not send 'invisible' message to cell if it is still nearby
+            // This prevents cancelling download for the cell that was shown for a moment
+            // with spring animation
+            cell.cellIsInvisible()
+          }
         }
       }
     }
