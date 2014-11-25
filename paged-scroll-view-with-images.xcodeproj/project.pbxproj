@@ -16,6 +16,7 @@
 		2B69859D1A240A7C002FDEC0 /* TegImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69859A1A240A7C002FDEC0 /* TegImageDownloader.swift */; };
 		2B69859E1A240A7C002FDEC0 /* TegImageDownloadTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69859B1A240A7C002FDEC0 /* TegImageDownloadTask.swift */; };
 		2B6985A01A240A82002FDEC0 /* TegAsyncDownloaderSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69859F1A240A82002FDEC0 /* TegAsyncDownloaderSession.swift */; };
+		2B6985AE1A241E5A002FDEC0 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 2B6985AD1A241E5A002FDEC0 /* README.md */; };
 		2BEDBB6B1A22ABDD0058380D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDBB6A1A22ABDD0058380D /* AppDelegate.swift */; };
 		2BEDBB6D1A22ABDD0058380D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDBB6C1A22ABDD0058380D /* ViewController.swift */; };
 		2BEDBB701A22ABDD0058380D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BEDBB6E1A22ABDD0058380D /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 		2B69859A1A240A7C002FDEC0 /* TegImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegImageDownloader.swift; sourceTree = "<group>"; };
 		2B69859B1A240A7C002FDEC0 /* TegImageDownloadTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegImageDownloadTask.swift; sourceTree = "<group>"; };
 		2B69859F1A240A82002FDEC0 /* TegAsyncDownloaderSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegAsyncDownloaderSession.swift; sourceTree = "<group>"; };
+		2B6985AD1A241E5A002FDEC0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2BEDBB651A22ABDD0058380D /* paged-scroll-view-with-images.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "paged-scroll-view-with-images.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BEDBB691A22ABDD0058380D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BEDBB6A1A22ABDD0058380D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 		2BEDBB5C1A22ABDD0058380D = {
 			isa = PBXGroup;
 			children = (
+				2B6985AD1A241E5A002FDEC0 /* README.md */,
 				2BEDBB8A1A22ABF90058380D /* Default-568h@2x.png */,
 				2BEDBB671A22ABDD0058380D /* paged-scroll-view-with-images */,
 				2BEDBB7D1A22ABDD0058380D /* paged-scroll-view-with-imagesTests */,
@@ -313,6 +316,7 @@
 				2BEDBB991A22B7F40058380D /* TegScreenSize.swift in Sources */,
 				2B5108671A23E684006C029B /* TegQ.swift in Sources */,
 				2B51085C1A22FC8C006C029B /* YiiPagedImages.swift in Sources */,
+				2B6985AE1A241E5A002FDEC0 /* README.md in Sources */,
 				2BEDBB6D1A22ABDD0058380D /* ViewController.swift in Sources */,
 				2B69859D1A240A7C002FDEC0 /* TegImageDownloader.swift in Sources */,
 				2B51085E1A230191006C029B /* TegPagedImagesCellView.swift in Sources */,

@@ -2,6 +2,16 @@
 
 This demo app show how to display images in a scroll view with page indicator.
 
+Images can be assigned with UIImage object or loaded from server with an URL.
+
+## Usage
+
+1. Add NSObject to storyboard. Assign `YiiPagedImages` class to it.
+1. Make an outlet in your ViewControllers from this NSObject.
+1. Add a scroll view to your storyboard and connect it with `scrollView` variable in `YiiPagedImages.swift` file.
+1. Add a page control and connect it to `pageControl` variable.
+1. Call `setup()` method on the object in your ViewController's `viewDidLoad`.
+1. Add UIImage with `load` method or load image with URL with `addUrl` method.
 
 ## Attribution
 
