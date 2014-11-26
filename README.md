@@ -4,6 +4,10 @@ This demo app show how to display images in a scroll view with page indicator.
 
 Images can be assigned with UIImage object or loaded from server with an URL.
 
+
+<img src='https://dl.dropboxusercontent.com/u/11143285/bikeexchange/github_images/paged-scroll-view-screenshot.jpg?v=2' width='414' alt='Paged scroll view with image for iOS'>
+
+
 ## Usage
 
 1. Add NSObject to storyboard. Assign `YiiPagedImages` class to it.
