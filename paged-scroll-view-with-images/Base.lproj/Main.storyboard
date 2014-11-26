@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -26,13 +26,23 @@
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWf-22-EdU">
-                                <rect key="frame" x="218" y="541" width="164" height="38"/>
+                                <rect key="frame" x="210" y="562" width="181" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Add More Images">
+                                <state key="normal" title="Add remote images">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="addMoreImages:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F2u-FW-q6c"/>
+                                    <action selector="addRemoteImages:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KTI-0J-PRK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kdA-1m-FV0">
+                                <rect key="frame" x="218" y="519" width="159" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Add local images">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addLocalImages:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sWI-j6-Q4b"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -41,8 +51,10 @@
                             <constraint firstAttribute="trailing" secondItem="muI-0N-aZY" secondAttribute="trailing" id="6wP-zZ-N1a"/>
                             <constraint firstItem="muI-0N-aZY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DH0-0Y-AeH"/>
                             <constraint firstAttribute="centerX" secondItem="FWf-22-EdU" secondAttribute="centerX" id="FJC-Yg-AHC"/>
+                            <constraint firstAttribute="centerX" secondItem="kdA-1m-FV0" secondAttribute="centerX" constant="2.5" id="IiF-7L-j1V"/>
                             <constraint firstAttribute="centerY" secondItem="muI-0N-aZY" secondAttribute="centerY" constant="14" id="R1h-mb-BLl"/>
-                            <constraint firstItem="FWf-22-EdU" firstAttribute="top" secondItem="muI-0N-aZY" secondAttribute="bottom" constant="30" id="bb0-c6-ag6"/>
+                            <constraint firstItem="FWf-22-EdU" firstAttribute="top" secondItem="kdA-1m-FV0" secondAttribute="bottom" constant="5" id="uEa-38-Uyt"/>
+                            <constraint firstItem="kdA-1m-FV0" firstAttribute="top" secondItem="muI-0N-aZY" secondAttribute="bottom" constant="8" id="uth-lI-6gb"/>
                         </constraints>
                     </view>
                     <connections>

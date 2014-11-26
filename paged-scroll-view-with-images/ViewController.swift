@@ -23,15 +23,22 @@ class ViewController: UIViewController {
   }
 
   private func loadImages() {
-    let imageNames = ["gibbon.jpg", "beaver.jpg", "hippo.jpg", "elephant.jpg"]
+    if let currentImage = UIImage(named: "gibbon.jpg") {
+      images.add(currentImage)
+    }
+  }
+
+
+  @IBAction func addLocalImages(sender: AnyObject) {
+    let imageNames = ["beaver.jpg", "hippo.jpg", "elephant.jpg"]
     for name in imageNames {
       if let currentImage = UIImage(named: name) {
-        images.load(currentImage)
+        images.add(currentImage)
       }
     }
   }
   
-  @IBAction func addMoreImages(sender: AnyObject) {
+  @IBAction func addRemoteImages(sender: AnyObject) {
     let imageUrls = [
       "http://www.furnitureexchange.com.au/dbimages/bike/fn_large/236/100092236/popup/28-10-2013_10-44-03_AM.jpg",
       "http://www.tinitrader.com.au/dbimages/bike/fn_large/336/100183336/popup/Digga_Dog140827576653f09536b9c68.jpg",
@@ -40,7 +47,7 @@ class ViewController: UIViewController {
     ]
     
     for imageUrl in imageUrls {
-      images.addUrl(imageUrl)
+      images.addRemote(imageUrl)
     }
   }
 }

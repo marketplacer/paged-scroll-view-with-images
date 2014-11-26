@@ -25,12 +25,12 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
     setupPageControl()
   }
 
-  func load(image: UIImage) {
+  func add(image: UIImage) {
     TegPagedImages.loadImage(image, scrollView: scrollView, imageSize: imageSize)
     updateNumberOfPages()
   }
 
-  func addUrl(url: String) {
+  func addRemote(url: String) {
     TegPagedImages.addUrl(url, scrollView: scrollView, imageSize: imageSize,
       placeholderImage: placeholderImage)
 
