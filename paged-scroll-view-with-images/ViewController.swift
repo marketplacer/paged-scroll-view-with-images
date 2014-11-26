@@ -28,7 +28,6 @@ class ViewController: UIViewController {
     }
   }
 
-
   @IBAction func addLocalImages(sender: AnyObject) {
     let imageNames = ["beaver.jpg", "hippo.jpg", "elephant.jpg"]
     for name in imageNames {
