@@ -55,7 +55,7 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
       TegAutolayoutConstraints.centerX(pagedControlContainer, viewTwo: scrollView, constraintContainer: currentSuperview)
       
       // Fill page control to the width of its container
-      TegAutolayoutConstraints.fillParent(pageControl, parentView: pagedControlContainer, margin: 5,
+      TegAutolayoutConstraints.fillParent(pageControl, parentView: pagedControlContainer, margin: 7,
         vertically: false)
       
       // Vertically align page control and its container
@@ -77,6 +77,7 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
     let numberOfPages = scrollView.subviews.count
     pageControl.numberOfPages = numberOfPages
     pagedControlContainer.invalidateIntrinsicContentSize()
+    pageControl.hidden = numberOfPages < 2
   }
 
   private func updateCurrentPage() {
