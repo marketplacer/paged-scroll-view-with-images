@@ -13,12 +13,17 @@ class TegPagedImagesCellView: UIView {
 
   private let imageView = UIImageView()
   private var downloadTask: TegImageDownloadTask?
+  
+  internal let imageViewContentMode: UIViewContentMode!
 
-  override init(frame: CGRect) {
+  init(frame: CGRect, contentMode: UIViewContentMode) {
+    self.imageViewContentMode = contentMode
+    
     super.init(frame: frame)
 
-    TegPagedImagesCellView.setupImageView(imageView, size: frame.size)
+    TegPagedImagesCellView.setupImageView(imageView, size: frame.size, contentMode: contentMode)
     addSubview(imageView)
+    clipsToBounds = true
   }
 
   required init(coder aDecoder: NSCoder) {
@@ -30,9 +35,11 @@ class TegPagedImagesCellView: UIView {
     imageView.image = image
   }
 
-  private class func setupImageView(imageView: UIImageView, size: CGSize) {
+  private class func setupImageView(imageView: UIImageView, size: CGSize,
+    contentMode:  UIViewContentMode) {
+      
     imageView.frame = CGRect(origin: CGPoint(), size: size)
-    imageView.contentMode = UIViewContentMode.ScaleAspectFit
+    imageView.contentMode = contentMode
   }
 
   // Called each time the cell is visible on screen when scrolling.
@@ -76,7 +83,9 @@ class TegPagedImagesCellView: UIView {
   private func fadeInImage(image: UIImage) {
     let downloadedImageView = UIImageView(image: image)
     addSubview(downloadedImageView)
-    TegPagedImagesCellView.setupImageView(downloadedImageView, size: frame.size)
+    
+    TegPagedImagesCellView.setupImageView(downloadedImageView, size: frame.size,
+      contentMode: imageViewContentMode)
 
     downloadedImageView.alpha = 0
     UIView.animateWithDuration(0.2, animations: {

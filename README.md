@@ -16,6 +16,8 @@ Images can be assigned with UIImage object or loaded from server with an URL.
 1. Call `setup()` method on the object in your ViewController's `viewDidLoad`.
 1. Add UIImage with `add` method or load remote image with URL with `addRemote` method.
 
+Use `contentMode` of `YiiPagedImages` to configure the images are scaled.
+
 ## Attribution
 
 Photos are taken from following sources:

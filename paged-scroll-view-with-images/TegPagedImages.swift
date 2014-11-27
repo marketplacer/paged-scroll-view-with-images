@@ -9,13 +9,17 @@
 import UIKit
 
 class TegPagedImages {
-  class func loadImage(image: UIImage, scrollView: UIScrollView, imageSize: CGSize) {
-    let cell = addCell(scrollView, imageSize: imageSize)
+  class func loadImage(image: UIImage, scrollView: UIScrollView,
+    imageSize: CGSize, contentMode: UIViewContentMode) {
+      
+    let cell = addCell(scrollView, imageSize: imageSize, contentMode: contentMode)
     cell.showImage(image)
   }
 
-  class func addUrl(url: String, scrollView: UIScrollView, imageSize: CGSize, placeholderImage: UIImage?) {
-    let cell = addCell(scrollView, imageSize: imageSize)
+  class func addUrl(url: String, scrollView: UIScrollView, imageSize: CGSize,
+    placeholderImage: UIImage?, contentMode: UIViewContentMode) {
+  
+  let cell = addCell(scrollView, imageSize: imageSize, contentMode: contentMode)
 
     if let currentPlaceholderImage = placeholderImage {
       cell.showImage(currentPlaceholderImage)
@@ -24,13 +28,15 @@ class TegPagedImages {
     cell.url = url
   }
 
-  private class func addCell(scrollView: UIScrollView, imageSize: CGSize) -> TegPagedImagesCellView {
+  private class func addCell(scrollView: UIScrollView, imageSize: CGSize,
+    contentMode: UIViewContentMode) -> TegPagedImagesCellView {
+      
     let cellFrame = CGRect(
       origin: CGPoint(x: contentRightEdge(scrollView), y:0),
       size: imageSize
     )
 
-    let cell = TegPagedImagesCellView(frame: cellFrame)
+    let cell = TegPagedImagesCellView(frame: cellFrame, contentMode: contentMode)
     scrollView.addSubview(cell)
     updateScrollViewContentSize(scrollView)
     return cell

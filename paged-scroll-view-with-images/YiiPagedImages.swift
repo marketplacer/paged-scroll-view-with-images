@@ -12,6 +12,8 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
   @IBOutlet weak var scrollView: UIScrollView!
   private let pageControl = UIPageControl()
   private let pagedControlContainer = TegPagedControlContainer()
+  
+  var contentMode = UIViewContentMode.ScaleAspectFit
 
   var placeholderImageName = "paged-scroll-view-with-images-placeholder.jpg"
 
@@ -26,13 +28,13 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
   }
 
   func add(image: UIImage) {
-    TegPagedImages.loadImage(image, scrollView: scrollView, imageSize: imageSize)
+    TegPagedImages.loadImage(image, scrollView: scrollView, imageSize: imageSize, contentMode: contentMode)
     updateNumberOfPages()
   }
 
   func addRemote(url: String) {
     TegPagedImages.addUrl(url, scrollView: scrollView, imageSize: imageSize,
-      placeholderImage: placeholderImage)
+      placeholderImage: placeholderImage, contentMode: contentMode)
 
     updateNumberOfPages()
   }
