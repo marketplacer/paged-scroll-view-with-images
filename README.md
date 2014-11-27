@@ -1,6 +1,6 @@
 # Paged scroll view with images on iOS with Swift
 
-This demo app show how to display images in a scroll view with page indicator.
+This demo app shows how to display images in a scroll view with page indicator.
 
 Images can be assigned with UIImage object or loaded from server with an URL.
 
