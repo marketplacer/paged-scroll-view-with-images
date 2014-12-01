@@ -14,9 +14,9 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
   private let pagedControlContainer = TegPagedControlContainer()
   
   var contentMode = UIViewContentMode.ScaleAspectFit
-
+  
   var placeholderImageName = "paged-scroll-view-with-images-placeholder.jpg"
-
+  
   deinit {
     cancelImageDownloads()
   }
@@ -26,16 +26,16 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
     pageControl.backgroundColor = nil
     setupPageControl()
   }
-
+  
   func add(image: UIImage) {
     TegPagedImages.loadImage(image, scrollView: scrollView, imageSize: imageSize, contentMode: contentMode)
     updateNumberOfPages()
   }
-
+  
   func addRemote(url: String) {
     TegPagedImages.addUrl(url, scrollView: scrollView, imageSize: imageSize,
       placeholderImage: placeholderImage, contentMode: contentMode)
-
+    
     updateNumberOfPages()
   }
   
@@ -49,7 +49,7 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
       
       pagedControlContainer.setTranslatesAutoresizingMaskIntoConstraints(false)
       pageControl.setTranslatesAutoresizingMaskIntoConstraints(false)
-
+      
       // Align page control container with the bottom of the scroll view
       TegAutolayoutConstraints.alignSameAttributes(pagedControlContainer, viewTwo: scrollView, constraintContainer: currentSuperview, attribute: NSLayoutAttribute.Bottom, margin: -5)
       
@@ -63,33 +63,33 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
       // Vertically align page control and its container
       TegAutolayoutConstraints.centerY(pageControl, viewTwo: pagedControlContainer,
         constraintContainer: currentSuperview)
-
+      
       updateNumberOfPages()
     }
   }
-
+  
   private var imageSize: CGSize {
     scrollView.layoutIfNeeded()
     return scrollView.bounds.size
   }
-
+  
   private var placeholderImage: UIImage? {
     return UIImage(named: placeholderImageName)
   }
-
+  
   private func updateNumberOfPages() {
     let numberOfPages = scrollView.subviews.count
     pageControl.numberOfPages = numberOfPages
     pagedControlContainer.invalidateIntrinsicContentSize()
     pagedControlContainer.hidden = numberOfPages < 2
   }
-
+  
   private func updateCurrentPage() {
-    let xOffset = scrollView.contentOffset.x
+    let xOffset = scrollView.contentOffset.x + scrollView.frame.size.width / 2
     let currentPage = Int(xOffset / scrollView.frame.size.width)
     pageControl.currentPage = currentPage
   }
-
+  
   private func notifyCellAboutTheirVisibility() {
     for cell in cellViews {
       if TegPagedImages.subviewVisible(scrollView, subview: cell) {
