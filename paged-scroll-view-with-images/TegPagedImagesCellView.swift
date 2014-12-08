@@ -10,20 +10,36 @@ import UIKit
 
 class TegPagedImagesCellView: UIView {
   var url: String?
+  weak var delegate: TegPagedImagesCellViewDelegate?
 
   private let imageView = UIImageView()
   private var downloadTask: TegImageDownloadTask?
-  
+
   internal let imageViewContentMode: UIViewContentMode!
 
   init(frame: CGRect, contentMode: UIViewContentMode) {
     self.imageViewContentMode = contentMode
-    
+
     super.init(frame: frame)
 
     TegPagedImagesCellView.setupImageView(imageView, size: frame.size, contentMode: contentMode)
     addSubview(imageView)
     clipsToBounds = true
+
+    setupTap()
+  }
+
+  private func setupTap() {
+    let tapGesture = UITapGestureRecognizer(target: self, action: "respondToTap:")
+    addGestureRecognizer(tapGesture)
+  }
+
+  func respondToTap(gesture: UITapGestureRecognizer) {
+    if downloadTask != nil { return } // downloading
+
+    if let currentImage = imageView.image {
+      delegate?.tegPagedImagesCellViewDelegate_onImageTapped(currentImage)
+    }
   }
 
   required init(coder aDecoder: NSCoder) {
@@ -37,9 +53,9 @@ class TegPagedImagesCellView: UIView {
 
   private class func setupImageView(imageView: UIImageView, size: CGSize,
     contentMode:  UIViewContentMode) {
-      
-    imageView.frame = CGRect(origin: CGPoint(), size: size)
-    imageView.contentMode = contentMode
+
+      imageView.frame = CGRect(origin: CGPoint(), size: size)
+      imageView.contentMode = contentMode
   }
 
   // Called each time the cell is visible on screen when scrolling.
@@ -83,7 +99,7 @@ class TegPagedImagesCellView: UIView {
   private func fadeInImage(image: UIImage) {
     let downloadedImageView = UIImageView(image: image)
     addSubview(downloadedImageView)
-    
+
     TegPagedImagesCellView.setupImageView(downloadedImageView, size: frame.size,
       contentMode: imageViewContentMode)
 

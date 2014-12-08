@@ -15,7 +15,7 @@ class TegPagedControlContainer: UIView {
         width: firstSubview.intrinsicContentSize().width,
         height: 20)
     }
-    
+
     return super.intrinsicContentSize()
   }
 }
