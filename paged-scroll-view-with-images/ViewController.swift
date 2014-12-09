@@ -20,13 +20,6 @@ class ViewController: UIViewController {
 
     images.contentMode = UIViewContentMode.ScaleAspectFill
     images.setup()
-    loadImages()
-  }
-
-  private func loadImages() {
-    if let currentImage = UIImage(named: "gibbon.jpg") {
-      images.add(currentImage)
-    }
   }
 
   @IBAction func addLocalImages(sender: AnyObject) {
