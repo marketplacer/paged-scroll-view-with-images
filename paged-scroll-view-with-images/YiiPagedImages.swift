@@ -24,6 +24,9 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
   }
   
   func setup() {
+    scrollView.pagingEnabled = true
+    scrollView.showsHorizontalScrollIndicator = false
+    scrollView.showsVerticalScrollIndicator = false
     scrollView.delegate = self
     pageControl.backgroundColor = nil
     setupPageControl()
@@ -44,14 +47,30 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
     notifyCellsAboutTheirVisibility()
   }
   
+  func removeAllImagesWithAnimation(onFinished: (()->())? = nil) {
+    UIView.animateWithDuration(0.2,
+      animations: {
+        self.scrollView.alpha = 0
+      },
+      completion: { finished in
+        for subview in self.scrollView.subviews {
+          subview.removeFromSuperview()
+        }
+        
+        self.scrollView.alpha = 1
+        self.updateNumberOfPages()
+        onFinished?()
+      }
+    )
+  }
+  
   var numberOfImages: Int {
     return scrollView.subviews.count
   }
   
   private func setupPageControl() {
     if let currentSuperview = scrollView.superview {
-      
-      currentSuperview.addSubview(pagedControlContainer)
+      currentSuperview.insertSubview(pagedControlContainer, aboveSubview: scrollView)
       pagedControlContainer.addSubview(pageControl)
       pagedControlContainer.backgroundColor = TegColors.Shade60.uiColor.colorWithAlphaComponent(0.2)
       pagedControlContainer.layer.cornerRadius = 10

@@ -90,7 +90,7 @@ class TegPagedImages {
     if subview.frame.maxX < scrollView.bounds.minX {
       return abs(scrollView.bounds.minX - subview.frame.maxX) < maxOffscreenDistance
     }
-
+    
     return true
   }
 }
