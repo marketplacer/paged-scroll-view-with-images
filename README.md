@@ -23,8 +23,6 @@ Images can be assigned with UIImage object or loaded from server with a URL.
 yiiPagedImaged.settings.contentMode = UIViewContentMode.ScaleAspectFill
 ```
 
-Use `contentMode` of `YiiPagedImages` to change image scaling mode.
-
 ## Attribution
 
 Photos are taken from following sources:
