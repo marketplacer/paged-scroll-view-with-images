@@ -96,21 +96,24 @@ class TegPagedImagesCellView: UIView {
     fadeInImage(image)
   }
   
-  func fadeInImage(image: UIImage) {
-    let downloadedImageView = UIImageView(image: image)
-    addSubview(downloadedImageView)
+  func fadeInImage(image: UIImage, showOnlyIfNoImageShown: Bool = false) {
+    let tempImageView = UIImageView(image: image)
+    addSubview(tempImageView)
     
-    TegPagedImagesCellView.setupImageView(downloadedImageView, size: frame.size,
+    TegPagedImagesCellView.setupImageView(tempImageView, size: frame.size,
       contentMode: imageViewContentMode)
     
-    downloadedImageView.alpha = 0
-    UIView.animateWithDuration(0.2, animations: {
-      downloadedImageView.alpha = 1
+    tempImageView.alpha = 0
+    UIView.animateWithDuration(0.5, animations: {
+      tempImageView.alpha = 1
       self.imageView.alpha = 0
       },
       completion: { finished in
-        self.showImage(image)
-        downloadedImageView.removeFromSuperview()
+        if !showOnlyIfNoImageShown || self.imageView.image == nil {
+          self.showImage(image)
+        }
+        
+        tempImageView.removeFromSuperview()
       }
     )
   }

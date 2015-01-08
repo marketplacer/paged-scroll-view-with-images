@@ -15,13 +15,7 @@ class TegPagedImages {
       let cell = addCell(scrollView, imageSize: imageSize, contentMode: contentMode)
       cell.delegate = delegate
       
-      let subviewsCount = scrollView.subviews.count
-      if subviewsCount == 1 {
-        // Fade in first placeholder image
-        cell.fadeInImage(image)
-      } else {
-        cell.showImage(image)
-      }
+      cell.showImage(image)
   }
   
   class func addUrl(url: String, scrollView: UIScrollView, imageSize: CGSize,
@@ -35,7 +29,7 @@ class TegPagedImages {
         let subviewsCount = scrollView.subviews.count
         if subviewsCount == 1 {
           // Fade in first placeholder image
-          cell.fadeInImage(currentPlaceholderImage)
+          cell.fadeInImage(currentPlaceholderImage, showOnlyIfNoImageShown: true)
         } else {
           cell.showImage(currentPlaceholderImage)
         }
