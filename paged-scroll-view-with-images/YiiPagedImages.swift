@@ -48,9 +48,15 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
   }
   
   func removeAllImagesWithAnimation(onFinished: (()->())? = nil) {
-    UIView.animateWithDuration(0.2,
+    if numberOfImages == 0 {
+      onFinished?()
+      return
+    }
+    
+    UIView.animateWithDuration(0.5,
       animations: {
         self.scrollView.alpha = 0
+        self.pagedControlContainer.alpha = 0
       },
       completion: { finished in
         for subview in self.scrollView.subviews {
@@ -58,6 +64,7 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
         }
         
         self.scrollView.alpha = 1
+        self.pagedControlContainer.alpha = 1
         self.updateNumberOfPages()
         onFinished?()
       }
