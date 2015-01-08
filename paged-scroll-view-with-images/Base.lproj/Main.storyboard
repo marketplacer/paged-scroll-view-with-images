@@ -18,13 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="muI-0N-aZY">
-                                <rect key="frame" x="0.0" y="61" width="600" height="450"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="muI-0N-aZY" secondAttribute="height" multiplier="4:3" id="gWU-Aj-X9v"/>
-                                </constraints>
-                            </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWf-22-EdU">
                                 <rect key="frame" x="210" y="570" width="181" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
@@ -45,6 +38,12 @@
                                     <action selector="addLocalImages:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sWI-j6-Q4b"/>
                                 </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="muI-0N-aZY">
+                                <rect key="frame" x="0.0" y="61" width="600" height="450"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="muI-0N-aZY" secondAttribute="height" multiplier="4:3" id="gWU-Aj-X9v"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>

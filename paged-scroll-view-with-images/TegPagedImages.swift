@@ -12,23 +12,36 @@ class TegPagedImages {
   class func loadImage(image: UIImage, scrollView: UIScrollView,
     imageSize: CGSize, contentMode: UIViewContentMode, delegate: TegPagedImagesCellViewDelegate?) {
 
-      let cell = addCell(scrollView, imageSize: imageSize, contentMode: contentMode)
-      cell.delegate = delegate
+    let cell = addCell(scrollView, imageSize: imageSize, contentMode: contentMode)
+    cell.delegate = delegate
+      
+    let subviewsCount = scrollView.subviews.count
+    if subviewsCount == 1 {
+      // Fade in first placeholder image
+      cell.fadeInImage(image)
+    } else {
       cell.showImage(image)
+    }
   }
 
   class func addUrl(url: String, scrollView: UIScrollView, imageSize: CGSize,
     placeholderImage: UIImage?, contentMode: UIViewContentMode,
     delegate: TegPagedImagesCellViewDelegate?) {
 
-      let cell = addCell(scrollView, imageSize: imageSize, contentMode: contentMode)
-      cell.delegate = delegate
+    let cell = addCell(scrollView, imageSize: imageSize, contentMode: contentMode)
+    cell.delegate = delegate
 
-      if let currentPlaceholderImage = placeholderImage {
+    if let currentPlaceholderImage = placeholderImage {
+      let subviewsCount = scrollView.subviews.count
+      if subviewsCount == 1 {
+        // Fade in first placeholder image
+        cell.fadeInImage(currentPlaceholderImage)
+      } else {
         cell.showImage(currentPlaceholderImage)
       }
+    }
 
-      cell.url = url
+    cell.url = url
   }
 
   private class func addCell(scrollView: UIScrollView, imageSize: CGSize,

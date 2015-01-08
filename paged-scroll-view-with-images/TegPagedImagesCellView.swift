@@ -96,7 +96,7 @@ class TegPagedImagesCellView: UIView {
     fadeInImage(image)
   }
   
-  private func fadeInImage(image: UIImage) {
+  func fadeInImage(image: UIImage) {
     let downloadedImageView = UIImageView(image: image)
     addSubview(downloadedImageView)
     
