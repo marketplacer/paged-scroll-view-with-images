@@ -17,7 +17,7 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
   
   var contentMode = UIViewContentMode.ScaleAspectFit
   
-  var placeholderImageName = "paged-scroll-view-with-images-placeholder.jpg"
+  var placeholderImageName = "paged-scroll-view-with-images-placeholder.png"
   
   deinit {
     cancelImageDownloads()

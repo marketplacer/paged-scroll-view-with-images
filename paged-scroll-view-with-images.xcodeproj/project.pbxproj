@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B3F5D431A5E4531005AC8A2 /* paged-scroll-view-with-images-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B3F5D421A5E4531005AC8A2 /* paged-scroll-view-with-images-placeholder.png */; };
 		2B51085C1A22FC8C006C029B /* YiiPagedImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51085B1A22FC8C006C029B /* YiiPagedImages.swift */; };
 		2B51085E1A230191006C029B /* TegPagedImagesCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51085D1A230191006C029B /* TegPagedImagesCellView.swift */; };
 		2B5108671A23E684006C029B /* TegQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5108661A23E684006C029B /* TegQ.swift */; };
 		2B51086B1A23EFEC006C029B /* no_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B51086A1A23EFEC006C029B /* no_image.jpg */; };
-		2B5108711A23FF8B006C029B /* paged-scroll-view-with-images-placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B5108701A23FF8B006C029B /* paged-scroll-view-with-images-placeholder.jpg */; };
 		2B5108731A24328B006C029B /* TegAutolayoutConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5108721A24328B006C029B /* TegAutolayoutConstraints.swift */; };
 		2B5108751A24363D006C029B /* TegPagedControlContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5108741A24363D006C029B /* TegPagedControlContainer.swift */; };
 		2B5108771A243A94006C029B /* TegColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5108761A243A94006C029B /* TegColors.swift */; };
@@ -48,11 +48,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B3F5D421A5E4531005AC8A2 /* paged-scroll-view-with-images-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paged-scroll-view-with-images-placeholder.png"; sourceTree = "<group>"; };
 		2B51085B1A22FC8C006C029B /* YiiPagedImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YiiPagedImages.swift; sourceTree = "<group>"; };
 		2B51085D1A230191006C029B /* TegPagedImagesCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegPagedImagesCellView.swift; sourceTree = "<group>"; };
 		2B5108661A23E684006C029B /* TegQ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegQ.swift; sourceTree = "<group>"; };
 		2B51086A1A23EFEC006C029B /* no_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = no_image.jpg; sourceTree = "<group>"; };
-		2B5108701A23FF8B006C029B /* paged-scroll-view-with-images-placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "paged-scroll-view-with-images-placeholder.jpg"; sourceTree = "<group>"; };
 		2B5108721A24328B006C029B /* TegAutolayoutConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegAutolayoutConstraints.swift; sourceTree = "<group>"; };
 		2B5108741A24363D006C029B /* TegPagedControlContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegPagedControlContainer.swift; sourceTree = "<group>"; };
 		2B5108761A243A94006C029B /* TegColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegColors.swift; sourceTree = "<group>"; };
@@ -201,7 +201,7 @@
 				2BEDBB8F1A22B11B0058380D /* gibbon.jpg */,
 				2BEDBB901A22B11B0058380D /* hippo.jpg */,
 				2B51086A1A23EFEC006C029B /* no_image.jpg */,
-				2B5108701A23FF8B006C029B /* paged-scroll-view-with-images-placeholder.jpg */,
+				2B3F5D421A5E4531005AC8A2 /* paged-scroll-view-with-images-placeholder.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -303,7 +303,7 @@
 				2BEDBB8B1A22ABF90058380D /* Default-568h@2x.png in Resources */,
 				2BEDBB921A22B11B0058380D /* elephant.jpg in Resources */,
 				2BEDBB751A22ABDD0058380D /* LaunchScreen.xib in Resources */,
-				2B5108711A23FF8B006C029B /* paged-scroll-view-with-images-placeholder.jpg in Resources */,
+				2B3F5D431A5E4531005AC8A2 /* paged-scroll-view-with-images-placeholder.png in Resources */,
 				2BEDBB721A22ABDD0058380D /* Images.xcassets in Resources */,
 				2B51086B1A23EFEC006C029B /* no_image.jpg in Resources */,
 				2BEDBB911A22B11B0058380D /* beaver.jpg in Resources */,
