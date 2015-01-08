@@ -17,6 +17,12 @@ Images can be assigned with UIImage object or loaded from server with a URL.
 1. Add UIImage with `add` method or load remote image with URL with `addRemote` method.
 1. Supply a `delegate` to `YiiPagedImages` if you want to receive image tap event. 
 
+## Customization
+
+```
+yiiPagedImaged.settings.contentMode = UIViewContentMode.ScaleAspectFill
+```
+
 Use `contentMode` of `YiiPagedImages` to change image scaling mode.
 
 ## Attribution

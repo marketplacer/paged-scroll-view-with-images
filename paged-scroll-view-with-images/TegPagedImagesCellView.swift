@@ -14,15 +14,14 @@ class TegPagedImagesCellView: UIView {
   
   private let imageView = UIImageView()
   private var downloadTask: TegImageDownloadTask?
+  private let settings: TegPagedImagesSettings
   
-  internal let imageViewContentMode: UIViewContentMode!
-  
-  init(frame: CGRect, contentMode: UIViewContentMode) {
-    self.imageViewContentMode = contentMode
+  init(frame: CGRect, settings: TegPagedImagesSettings) {
+    self.settings = settings
     
     super.init(frame: frame)
     
-    TegPagedImagesCellView.setupImageView(imageView, size: frame.size, contentMode: contentMode)
+    TegPagedImagesCellView.setupImageView(imageView, size: frame.size, contentMode: settings.contentMode)
     addSubview(imageView)
     clipsToBounds = true
     
@@ -101,10 +100,10 @@ class TegPagedImagesCellView: UIView {
     addSubview(tempImageView)
     
     TegPagedImagesCellView.setupImageView(tempImageView, size: frame.size,
-      contentMode: imageViewContentMode)
+      contentMode: settings.contentMode)
     
     tempImageView.alpha = 0
-    UIView.animateWithDuration(0.5, animations: {
+    UIView.animateWithDuration(settings.fadeInAnimationDuration, animations: {
       tempImageView.alpha = 1
       self.imageView.alpha = 0
       },

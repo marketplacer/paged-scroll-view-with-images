@@ -10,19 +10,19 @@ import UIKit
 
 class TegPagedImages {
   class func loadImage(image: UIImage, scrollView: UIScrollView,
-    imageSize: CGSize, contentMode: UIViewContentMode, delegate: TegPagedImagesCellViewDelegate?) {
+    imageSize: CGSize, settings: TegPagedImagesSettings, delegate: TegPagedImagesCellViewDelegate?) {
       
-      let cell = addCell(scrollView, imageSize: imageSize, contentMode: contentMode)
+      let cell = addCell(scrollView, imageSize: imageSize, settings: settings)
       cell.delegate = delegate
       
       cell.showImage(image)
   }
   
   class func addUrl(url: String, scrollView: UIScrollView, imageSize: CGSize,
-    placeholderImage: UIImage?, contentMode: UIViewContentMode,
-    delegate: TegPagedImagesCellViewDelegate?) {
+    placeholderImage: UIImage?,
+    settings: TegPagedImagesSettings, delegate: TegPagedImagesCellViewDelegate?) {
       
-      let cell = addCell(scrollView, imageSize: imageSize, contentMode: contentMode)
+      let cell = addCell(scrollView, imageSize: imageSize, settings: settings)
       cell.delegate = delegate
       
       if let currentPlaceholderImage = placeholderImage {
@@ -39,14 +39,14 @@ class TegPagedImages {
   }
   
   private class func addCell(scrollView: UIScrollView, imageSize: CGSize,
-    contentMode: UIViewContentMode) -> TegPagedImagesCellView {
+    settings: TegPagedImagesSettings) -> TegPagedImagesCellView {
       
       let cellFrame = CGRect(
         origin: CGPoint(x: contentRightEdge(scrollView), y:0),
         size: imageSize
       )
       
-      let cell = TegPagedImagesCellView(frame: cellFrame, contentMode: contentMode)
+      let cell = TegPagedImagesCellView(frame: cellFrame, settings: settings)
       scrollView.addSubview(cell)
       updateScrollViewContentSize(scrollView)
       return cell

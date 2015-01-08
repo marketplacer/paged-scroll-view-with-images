@@ -15,9 +15,7 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
   
   weak var delegate: TegPagedImagesCellViewDelegate?
   
-  var contentMode = UIViewContentMode.ScaleAspectFit
-  
-  var placeholderImageName = "paged-scroll-view-with-images-placeholder.png"
+  var settings = TegPagedImagesSettings()
   
   deinit {
     cancelImageDownloads()
@@ -34,14 +32,14 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
   
   func add(image: UIImage) {
     TegPagedImages.loadImage(image, scrollView: scrollView,
-      imageSize: imageSize, contentMode: contentMode, delegate: delegate)
+      imageSize: imageSize, settings: settings, delegate: delegate)
     
     updateNumberOfPages()
   }
   
   func addRemote(url: String) {
     TegPagedImages.addUrl(url, scrollView: scrollView, imageSize: imageSize,
-      placeholderImage: placeholderImage, contentMode: contentMode, delegate: delegate)
+      placeholderImage: placeholderImage, settings: settings, delegate: delegate)
     
     updateNumberOfPages()
     notifyCellsAboutTheirVisibility()
@@ -53,7 +51,7 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
       return
     }
     
-    UIView.animateWithDuration(0.5,
+    UIView.animateWithDuration(settings.fadeInAnimationDuration,
       animations: {
         self.scrollView.alpha = 0
         self.pagedControlContainer.alpha = 0
@@ -109,7 +107,7 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
   }
   
   private var placeholderImage: UIImage? {
-    return UIImage(named: placeholderImageName)
+    return UIImage(named: settings.placeholderImageName)
   }
   
   private func updateNumberOfPages() {

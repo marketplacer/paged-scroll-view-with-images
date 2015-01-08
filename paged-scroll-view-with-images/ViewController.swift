@@ -18,7 +18,7 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    images.contentMode = UIViewContentMode.ScaleAspectFill
+    images.settings.contentMode = UIViewContentMode.ScaleAspectFill
     images.setup()
   }
 

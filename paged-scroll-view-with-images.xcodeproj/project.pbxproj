@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B3F5D431A5E4531005AC8A2 /* paged-scroll-view-with-images-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B3F5D421A5E4531005AC8A2 /* paged-scroll-view-with-images-placeholder.png */; };
+		2B3F5D471A5E5299005AC8A2 /* TegPagedImagesSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3F5D461A5E5299005AC8A2 /* TegPagedImagesSettings.swift */; };
 		2B51085C1A22FC8C006C029B /* YiiPagedImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51085B1A22FC8C006C029B /* YiiPagedImages.swift */; };
 		2B51085E1A230191006C029B /* TegPagedImagesCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51085D1A230191006C029B /* TegPagedImagesCellView.swift */; };
 		2B5108671A23E684006C029B /* TegQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5108661A23E684006C029B /* TegQ.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		2B3F5D421A5E4531005AC8A2 /* paged-scroll-view-with-images-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paged-scroll-view-with-images-placeholder.png"; sourceTree = "<group>"; };
+		2B3F5D461A5E5299005AC8A2 /* TegPagedImagesSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegPagedImagesSettings.swift; sourceTree = "<group>"; };
 		2B51085B1A22FC8C006C029B /* YiiPagedImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YiiPagedImages.swift; sourceTree = "<group>"; };
 		2B51085D1A230191006C029B /* TegPagedImagesCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegPagedImagesCellView.swift; sourceTree = "<group>"; };
 		2B5108661A23E684006C029B /* TegQ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegQ.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				2BEDBB951A22B5AC0058380D /* TegPagedImages.swift */,
 				2B51085D1A230191006C029B /* TegPagedImagesCellView.swift */,
 				2BE350A41A354FE2003F589C /* TegPagedImagesCellViewDelegate.swift */,
+				2B3F5D461A5E5299005AC8A2 /* TegPagedImagesSettings.swift */,
 				2B51085B1A22FC8C006C029B /* YiiPagedImages.swift */,
 			);
 			name = PagesImageScrollView;
@@ -334,6 +337,7 @@
 				2B5108771A243A94006C029B /* TegColors.swift in Sources */,
 				2B51085C1A22FC8C006C029B /* YiiPagedImages.swift in Sources */,
 				2B6985AE1A241E5A002FDEC0 /* README.md in Sources */,
+				2B3F5D471A5E5299005AC8A2 /* TegPagedImagesSettings.swift in Sources */,
 				2B5108791A243ADB006C029B /* TegUIColor.swift in Sources */,
 				2B5108751A24363D006C029B /* TegPagedControlContainer.swift in Sources */,
 				2BEDBB6D1A22ABDD0058380D /* ViewController.swift in Sources */,
