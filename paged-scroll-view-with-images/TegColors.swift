@@ -1,11 +1,3 @@
-//
-//  TegColors.swift
-//  swippi
-//
-//  Created by Evgenii Neumerzhitckii on 3/10/2014.
-//  Copyright (c) 2014 The Exchange Group Pty Ltd. All rights reserved.
-//
-
 import UIKit
 
 enum TegColors: String {

@@ -18,7 +18,7 @@ class TegAsyncImageDownloader {
       
     return TegAsyncDownloaderSession.shared.dataWithUrl(url,
       onSuccess: { (data, response) in
-        self.handleResponse(data, response: response, onSuccess)
+        self.handleResponse(data, response: response, callback: onSuccess)
       },
       onAlways: {
         if let onAllwaysArgument = onAlways {

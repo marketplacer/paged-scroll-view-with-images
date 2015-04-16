@@ -1,11 +1,3 @@
-//
-//  TegPagesControlContainer.swift
-//  paged-scroll-view-with-images
-//
-//  Created by Evgenii Neumerzhitckii on 25/11/2014.
-//  Copyright (c) 2014 The Exchange Group Pty Ltd. All rights reserved.
-//
-
 import UIKit
 
 class TegPagedControlContainer: UIView {

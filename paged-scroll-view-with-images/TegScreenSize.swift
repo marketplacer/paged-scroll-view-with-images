@@ -1,11 +1,3 @@
-//
-//  TegScreenSize.swift
-//  swippi
-//
-//  Created by Evgenii Neumerzhitckii on 23/09/2014.
-//  Copyright (c) 2014 The Exchange Group Pty Ltd. All rights reserved.
-//
-
 import UIKit
 
 var TegScreenSizeScale: CGFloat?

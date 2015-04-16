@@ -1,11 +1,3 @@
-//
-//  paged_scroll_view_with_imagesTests.swift
-//  paged-scroll-view-with-imagesTests
-//
-//  Created by Evgenii Neumerzhitckii on 24/11/2014.
-//  Copyright (c) 2014 Evgenii Neumerzhitckii. All rights reserved.
-//
-
 import UIKit
 import XCTest
 

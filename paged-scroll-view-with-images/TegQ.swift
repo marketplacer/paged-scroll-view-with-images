@@ -1,10 +1,5 @@
-//
-//  TegDispatchAsync.swift
 //  
 //  A shortcut to run code asynchronously or in main queue
-//
-//  Created by Evgenii Neumerzhitckii on 18/09/2014.
-//  Copyright (c) 2014 The Exchange Group Pty Ltd. All rights reserved.
 //
 
 import Foundation

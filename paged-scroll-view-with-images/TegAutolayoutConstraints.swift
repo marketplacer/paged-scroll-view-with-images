@@ -1,10 +1,5 @@
 //
-//  TegAlign.swift
-//
 //  Collection of shortcuts to create autolayout constraints.
-//
-//  Created by Evgenii Neumerzhitckii on 27/10/2014.
-//  Copyright (c) 2014 The Exchange Group Pty Ltd. All rights reserved.
 //
 
 import UIKit
@@ -111,38 +106,45 @@ class TegAutolayoutConstraints {
   class func twoViewsNextToEachOther(viewOne: UIView, viewTwo: UIView,
     constraintContainer: UIView, margin: CGFloat = 0,
     vertically: Bool = false) -> [NSLayoutConstraint] {
-
+      
       var marginFormat = ""
-
+      
       if margin != 0 {
         marginFormat = "-\(margin)-"
       }
-
+      
       var format = "[viewOne]\(marginFormat)[viewTwo]"
-
+      
       if vertically {
         format = "V:" + format
       }
-
-      let constraints = NSLayoutConstraint.constraintsWithVisualFormat(format,
+      
+      if let constraints = NSLayoutConstraint.constraintsWithVisualFormat(format,
         options: nil, metrics: nil,
-        views: [ "viewOne": viewOne, "viewTwo": viewTwo ]) as [NSLayoutConstraint]
-
-      constraintContainer.addConstraints(constraints)
-
-      return constraints
+        views: [ "viewOne": viewOne, "viewTwo": viewTwo ]) as? [NSLayoutConstraint] {
+          
+          constraintContainer.addConstraints(constraints)
+          
+          return constraints
+      }
+      
+      return []
   }
 
   class func equalWidth(viewOne: UIView, viewTwo: UIView,
     constraintContainer: UIView) -> [NSLayoutConstraint] {
-
-      let constraints = NSLayoutConstraint.constraintsWithVisualFormat("[viewOne(==viewTwo)]",
+      
+      if let constraints = NSLayoutConstraint.constraintsWithVisualFormat("[viewOne(==viewTwo)]",
         options: nil, metrics: nil,
-        views: ["viewOne": viewOne, "viewTwo": viewTwo]) as [NSLayoutConstraint]
-
-      constraintContainer.addConstraints(constraints)
-
-      return constraints
+        views: ["viewOne": viewOne, "viewTwo": viewTwo]) as? [NSLayoutConstraint] {
+          
+          
+          constraintContainer.addConstraints(constraints)
+          
+          return constraints
+      }
+      
+      return []
   }
 
   class func height(view: UIView, value: CGFloat) -> [NSLayoutConstraint] {

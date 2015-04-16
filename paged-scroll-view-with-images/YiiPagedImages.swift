@@ -1,11 +1,3 @@
-//
-//  PagedStoryboardObject.swift
-//  paged-scroll-view-with-images
-//
-//  Created by Evgenii Neumerzhitckii on 24/11/2014.
-//  Copyright (c) 2014 The Exchange Group Pty Ltd. All rights reserved.
-//
-
 import UIKit
 
 class YiiPagedImages: NSObject, UIScrollViewDelegate {
@@ -145,7 +137,7 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
   }
   
   private var cellViews: [TegPagedImagesCellView] {
-    return scrollView.subviews.filter { return $0 is TegPagedImagesCellView }.map { $0 as TegPagedImagesCellView }
+    return TegArray.convert(scrollView.subviews)
   }
 }
 

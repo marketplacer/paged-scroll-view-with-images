@@ -1,9 +1,10 @@
 //
-//  TegUIColor.swift
-//  swippi
+//  Create a UIColor object from a string.
 //
-//  Created by Evgenii Neumerzhitckii on 3/10/2014.
-//  Copyright (c) 2014 The Exchange Group Pty Ltd. All rights reserved.
+//  Examples:
+//
+//    TegUIColor.fromHexString('#340f9a')
+//    TegUIColor.fromHexString('#f1a2b3a6') // With alpha channel
 //
 
 import UIKit
@@ -30,11 +31,11 @@ public class TegUIColor {
       return UIColor()
     }
 
-    if countElements(hex) == 6 {
+    if count(hex) == 6 {
       red   = CGFloat((hexValue & 0xFF0000) >> 16) / 255.0
       green = CGFloat((hexValue & 0x00FF00) >> 8)  / 255.0
       blue  = CGFloat(hexValue & 0x0000FF) / 255.0
-    } else if countElements(hex) == 8 {
+    } else if count(hex) == 8 {
       red   = CGFloat((hexValue & 0xFF000000) >> 24) / 255.0
       green = CGFloat((hexValue & 0x00FF0000) >> 16) / 255.0
       blue  = CGFloat((hexValue & 0x0000FF00) >> 8)  / 255.0
