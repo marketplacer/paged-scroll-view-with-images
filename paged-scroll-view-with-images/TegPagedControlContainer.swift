@@ -1,3 +1,8 @@
+//
+//  TegPagesControlContainer.swift
+//  paged-scroll-view-with-images
+//
+
 import UIKit
 
 class TegPagedControlContainer: UIView {
@@ -7,7 +12,7 @@ class TegPagedControlContainer: UIView {
         width: firstSubview.intrinsicContentSize().width,
         height: 20)
     }
-    
+
     return super.intrinsicContentSize()
   }
 }

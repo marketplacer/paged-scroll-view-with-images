@@ -1,3 +1,8 @@
+//
+//  PagesImagesCell.swift
+//  paged-scroll-view-with-images
+//
+
 import UIKit
 
 class TegPagedImagesCellView: UIView {
@@ -29,7 +34,7 @@ class TegPagedImagesCellView: UIView {
     if downloadTask != nil { return } // downloading
     
     if let currentImage = imageView.image {
-      delegate?.tegPagedImagesCellViewDelegate_onImageTapped(currentImage)
+      delegate?.tegPagedImagesCellViewDelegate_onImageTapped(currentImage, gesture: gesture)
     }
   }
   
@@ -96,8 +101,8 @@ class TegPagedImagesCellView: UIView {
     
     tempImageView.alpha = 0
     UIView.animateWithDuration(settings.fadeInAnimationDuration, animations: {
-      tempImageView.alpha = 1
-      self.imageView.alpha = 0
+        tempImageView.alpha = 1
+        self.imageView.alpha = 0
       },
       completion: { finished in
         if !showOnlyIfNoImageShown || self.imageView.image == nil {

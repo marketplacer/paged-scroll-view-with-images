@@ -6,7 +6,7 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
   private let pagedControlContainer = TegPagedControlContainer()
   
   weak var delegate: TegPagedImagesCellViewDelegate?
-  
+
   var settings = TegPagedImagesSettings()
   
   deinit {

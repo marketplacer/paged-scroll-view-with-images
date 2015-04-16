@@ -1,33 +1,38 @@
+//
+//  PagedScrollViewWithImages.swift
+//  paged-scroll-view-with-images
+//
+
 import UIKit
 
 class TegPagedImages {
   class func loadImage(image: UIImage, scrollView: UIScrollView,
     imageSize: CGSize, settings: TegPagedImagesSettings, delegate: TegPagedImagesCellViewDelegate?) {
       
-      let cell = addCell(scrollView, imageSize: imageSize, settings: settings)
-      cell.delegate = delegate
-      
-      cell.showImage(image)
+    let cell = addCell(scrollView, imageSize: imageSize, settings: settings)
+    cell.delegate = delegate
+
+    cell.showImage(image)
   }
   
   class func addUrl(url: String, scrollView: UIScrollView, imageSize: CGSize,
     placeholderImage: UIImage?,
     settings: TegPagedImagesSettings, delegate: TegPagedImagesCellViewDelegate?) {
       
-      let cell = addCell(scrollView, imageSize: imageSize, settings: settings)
-      cell.delegate = delegate
-      
-      if let currentPlaceholderImage = placeholderImage {
-        let subviewsCount = scrollView.subviews.count
-        if subviewsCount == 1 {
-          // Fade in first placeholder image
-          cell.fadeInImage(currentPlaceholderImage, showOnlyIfNoImageShown: true)
-        } else {
-          cell.showImage(currentPlaceholderImage)
-        }
+    let cell = addCell(scrollView, imageSize: imageSize, settings: settings)
+    cell.delegate = delegate
+    
+    if let currentPlaceholderImage = placeholderImage {
+      let subviewsCount = scrollView.subviews.count
+      if subviewsCount == 1 {
+        // Fade in first placeholder image
+        cell.fadeInImage(currentPlaceholderImage, showOnlyIfNoImageShown: true)
+      } else {
+        cell.showImage(currentPlaceholderImage)
       }
-      
-      cell.url = url
+    }
+    
+    cell.url = url
   }
   
   private class func addCell(scrollView: UIScrollView, imageSize: CGSize,
