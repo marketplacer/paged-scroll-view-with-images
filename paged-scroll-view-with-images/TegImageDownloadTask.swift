@@ -27,8 +27,8 @@ class TegImageDownloadTask {
       onSuccess: { image in
         onSuccess(image)
       },
-      onAlways: {
-        self.downloadTask = nil
+      onAlways: { [weak self] in
+        self?.downloadTask = nil
       }
     )
   }

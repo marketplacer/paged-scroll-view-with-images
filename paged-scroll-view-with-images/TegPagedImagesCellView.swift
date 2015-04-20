@@ -78,8 +78,8 @@ class TegPagedImagesCellView: UIView {
     if let currentUrl = url {
       let newDownload = TegImageDownloadTask(url: currentUrl)
       
-      newDownload.download { image in
-        self.imagedDownloadComplete(image)
+      newDownload.download { [weak self] image in
+        self?.imagedDownloadComplete(image)
       }
       
       downloadTask = newDownload

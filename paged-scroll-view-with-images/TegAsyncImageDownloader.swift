@@ -1,13 +1,8 @@
 //
-//  ImageDownloader.swift
-//
 //  Downloads image from server.
 //  If image is not found it still called onSuccess callback with 'no image' placeholder image.
 //
 //  Callbacks are called asynchronously and NOT in the main queue.
-//
-//  Created by Evgenii Neumerzhitckii on 5/09/2014.
-//  Copyright (c) 2014 The Exchange Group Pty Ltd. All rights reserved.
 //
 
 import UIKit
