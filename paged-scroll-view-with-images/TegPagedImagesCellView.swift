@@ -100,13 +100,13 @@ class TegPagedImagesCellView: UIView {
       contentMode: settings.contentMode)
     
     tempImageView.alpha = 0
-    UIView.animateWithDuration(settings.fadeInAnimationDuration, animations: {
+    UIView.animateWithDuration(settings.fadeInAnimationDuration, animations: { [weak self] in
         tempImageView.alpha = 1
-        self.imageView.alpha = 0
+        self?.imageView.alpha = 0
       },
-      completion: { finished in
-        if !showOnlyIfNoImageShown || self.imageView.image == nil {
-          self.showImage(image)
+      completion: { [weak self] finished in
+        if !showOnlyIfNoImageShown || self?.imageView.image == nil {
+          self?.showImage(image)
         }
         
         tempImageView.removeFromSuperview()

@@ -44,19 +44,21 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
     }
     
     UIView.animateWithDuration(settings.fadeInAnimationDuration,
-      animations: {
-        self.scrollView.alpha = 0
-        self.pagedControlContainer.alpha = 0
+      animations: { [weak self] in
+        self?.scrollView.alpha = 0
+        self?.pagedControlContainer.alpha = 0
       },
-      completion: { finished in
-        for subview in self.scrollView.subviews {
-          subview.removeFromSuperview()
+      completion: { [weak self] finished in
+        if let currentSelf = self {
+          for subview in currentSelf.scrollView.subviews {
+            subview.removeFromSuperview()
+          }
+          
+          currentSelf.scrollView.alpha = 1
+          currentSelf.pagedControlContainer.alpha = 1
+          currentSelf.updateNumberOfPages()
+          onFinished?()
         }
-        
-        self.scrollView.alpha = 1
-        self.pagedControlContainer.alpha = 1
-        self.updateNumberOfPages()
-        onFinished?()
       }
     )
   }
