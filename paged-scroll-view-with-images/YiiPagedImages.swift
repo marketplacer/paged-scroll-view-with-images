@@ -69,7 +69,7 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
     if let currentSuperview = scrollView.superview {
       currentSuperview.insertSubview(pagedControlContainer, aboveSubview: scrollView)
       pagedControlContainer.addSubview(pageControl)
-      pagedControlContainer.backgroundColor = TegColors.Shade60.uiColor.colorWithAlphaComponent(0.2)
+      pagedControlContainer.backgroundColor = TegColor.Shade60.uiColor.colorWithAlphaComponent(0.2)
       pagedControlContainer.layer.cornerRadius = 10
       
       pagedControlContainer.setTranslatesAutoresizingMaskIntoConstraints(false)

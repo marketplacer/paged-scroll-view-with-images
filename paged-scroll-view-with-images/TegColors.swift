@@ -1,6 +1,6 @@
 import UIKit
 
-enum TegColors: String {
+enum TegColor: String {
   case Bag = "#2bb999"
   case Heart = "#ea3160"
     
