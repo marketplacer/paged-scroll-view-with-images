@@ -141,14 +141,10 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
   private var cellViews: [TegPagedImagesCellView] {
     return TegArray.convert(scrollView.subviews)
   }
-}
-
-// UIScrollViewDelegate
-// --------------------------
-
-typealias UIScrollViewDelegate_implementation = YiiPagedImages
-
-extension UIScrollViewDelegate_implementation {
+  
+  // MARK: UIScrollViewDelegate
+  // --------------------------
+  
   func scrollViewDidScroll(scrollView: UIScrollView) {
     updateCurrentPage()
     notifyCellsAboutTheirVisibility()
