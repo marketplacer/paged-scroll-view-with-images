@@ -68,8 +68,8 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
   }
   
   private func setupPageControl() {
-    if let currentSuperview = scrollView.superview {
-      currentSuperview.insertSubview(pagedControlContainer, aboveSubview: scrollView)
+    if let superview = scrollView.superview {
+      superview.insertSubview(pagedControlContainer, aboveSubview: scrollView)
       pagedControlContainer.addSubview(pageControl)
       pagedControlContainer.backgroundColor = TegColor.Shade60.uiColor.colorWithAlphaComponent(0.2)
       pagedControlContainer.layer.cornerRadius = 10
@@ -78,10 +78,12 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
       pageControl.setTranslatesAutoresizingMaskIntoConstraints(false)
       
       // Align page control container with the bottom of the scroll view
-      TegAutolayoutConstraints.alignSameAttributes(pagedControlContainer, toItem: scrollView, constraintContainer: currentSuperview, attribute: NSLayoutAttribute.Bottom, margin: -5)
+      TegAutolayoutConstraints.alignSameAttributes(pagedControlContainer, toItem: scrollView,
+        constraintContainer: superview, attribute: NSLayoutAttribute.Bottom, margin: -5)
       
       // Horizontally center page control container with the scroll view
-      TegAutolayoutConstraints.centerX(pagedControlContainer, viewTwo: scrollView, constraintContainer: currentSuperview)
+      TegAutolayoutConstraints.centerX(pagedControlContainer, viewTwo: scrollView,
+        constraintContainer: superview)
       
       // Fill page control to the width of its container
       TegAutolayoutConstraints.fillParent(pageControl, parentView: pagedControlContainer, margin: 7,
@@ -89,7 +91,7 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
       
       // Vertically align page control and its container
       TegAutolayoutConstraints.centerY(pageControl, viewTwo: pagedControlContainer,
-        constraintContainer: currentSuperview)
+        constraintContainer: superview)
       
       updateNumberOfPages()
     }

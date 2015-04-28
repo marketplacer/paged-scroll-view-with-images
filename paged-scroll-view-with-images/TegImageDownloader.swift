@@ -17,8 +17,8 @@ class TegImageDownloader {
         TegQ.main { onSuccess(image) }
       },
       onAlways: {
-        if let currentOnAlways = onAlways {
-          TegQ.main { currentOnAlways() }
+        if let onAlways = onAlways {
+          TegQ.main { onAlways() }
         }
       }
     )

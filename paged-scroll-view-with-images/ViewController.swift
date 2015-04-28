@@ -17,8 +17,8 @@ class ViewController: UIViewController {
   @IBAction func addLocalImages(sender: AnyObject) {
     let imageNames = ["beaver.jpg", "hippo.jpg", "elephant.jpg"]
     for name in imageNames {
-      if let currentImage = UIImage(named: name) {
-        images.add(currentImage)
+      if let image = UIImage(named: name) {
+        images.add(image)
       }
     }
   }

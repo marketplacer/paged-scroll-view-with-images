@@ -22,13 +22,13 @@ class TegPagedImages {
     let cell = addCell(scrollView, imageSize: imageSize, settings: settings)
     cell.delegate = delegate
     
-    if let currentPlaceholderImage = placeholderImage {
+    if let placeholderImage = placeholderImage {
       let subviewsCount = scrollView.subviews.count
       if subviewsCount == 1 {
         // Fade in first placeholder image
-        cell.fadeInImage(currentPlaceholderImage, showOnlyIfNoImageShown: true)
+        cell.fadeInImage(placeholderImage, showOnlyIfNoImageShown: true)
       } else {
-        cell.showImage(currentPlaceholderImage)
+        cell.showImage(placeholderImage)
       }
     }
     

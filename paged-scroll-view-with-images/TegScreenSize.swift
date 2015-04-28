@@ -19,8 +19,8 @@ class TegScreenSize {
   }
 
   class func navBarHeight(view: UIViewController) -> CGFloat {
-    if let currentNavigationController = view.navigationController {
-      return currentNavigationController.navigationBar.frame.size.height
+    if let navigationController = view.navigationController {
+      return navigationController.navigationBar.frame.size.height
     }
 
     return 44

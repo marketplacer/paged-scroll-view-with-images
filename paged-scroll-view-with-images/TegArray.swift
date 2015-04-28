@@ -36,8 +36,8 @@ public struct TegArray {
     var result = [T]()
     
     for item in array {
-      if let currentItem = item as? T {
-        result.append(currentItem)
+      if let item = item as? T {
+        result.append(item)
       }
     }
     

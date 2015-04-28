@@ -34,8 +34,8 @@ class TegAsyncImageDownloader {
       return
     }
     
-    if let currentMimeType = response.MIMEType {
-      if !validMimeType(currentMimeType) {
+    if let mimeType = response.MIMEType {
+      if !validMimeType(mimeType) {
         handleError(callback)
         return
       }

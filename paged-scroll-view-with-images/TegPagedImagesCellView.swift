@@ -33,8 +33,8 @@ class TegPagedImagesCellView: UIView {
   func respondToTap(gesture: UITapGestureRecognizer) {
     if downloadTask != nil { return } // downloading
     
-    if let currentImage = imageView.image {
-      delegate?.tegPagedImagesCellViewDelegate_onImageTapped(currentImage, gesture: gesture)
+    if let image = imageView.image {
+      delegate?.tegPagedImagesCellViewDelegate_onImageTapped(image, gesture: gesture)
     }
   }
   
@@ -66,17 +66,15 @@ class TegPagedImagesCellView: UIView {
   }
   
   func cancelImageDownload() {
-    if let currentDownloadTask = downloadTask {
-      currentDownloadTask.cancel()
-      downloadTask = nil
-    }
+    downloadTask?.cancel()
+    downloadTask = nil
   }
   
   private func downloadImage() {
     if downloadTask != nil { return } // already downloading
     
-    if let currentUrl = url {
-      let newDownload = TegImageDownloadTask(url: currentUrl)
+    if let url = url {
+      let newDownload = TegImageDownloadTask(url: url)
       
       newDownload.download { [weak self] image in
         self?.imagedDownloadComplete(image)
