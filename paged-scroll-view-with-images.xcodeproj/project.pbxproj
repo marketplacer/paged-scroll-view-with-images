@@ -36,15 +36,15 @@
 		7E1725AC1AF9F11100D1947A /* TegSingleImageDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1725AA1AF9F11100D1947A /* TegSingleImageDownloadManager.swift */; };
 		7E1725AE1AF9F1B500D1947A /* TegPagedImagesCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1725AD1AF9F1B500D1947A /* TegPagedImagesCellView.swift */; };
 		7E1725B01AF9F1F900D1947A /* TegAsyncImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1725AF1AF9F1F900D1947A /* TegAsyncImageDownloader.swift */; };
-		7E1725B21AF9F23000D1947A /* TegHttpRequestIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1725B11AF9F23000D1947A /* TegHttpRequestIdentity.swift */; };
 		7E1725B41AF9F24000D1947A /* TegDownloaderAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1725B31AF9F24000D1947A /* TegDownloaderAsync.swift */; };
 		7E1725B61AF9F25C00D1947A /* TegErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1725B51AF9F25C00D1947A /* TegErrors.swift */; };
 		7E1725B81AF9F28A00D1947A /* TegHttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1725B71AF9F28A00D1947A /* TegHttpMethod.swift */; };
 		7E1725BA1AF9F29A00D1947A /* TegHttpContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1725B91AF9F29A00D1947A /* TegHttpContentType.swift */; };
-		7E1725BC1AF9F30800D1947A /* TegReachabilityHttpHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1725BB1AF9F30800D1947A /* TegReachabilityHttpHeader.swift */; };
 		7E1725BE1AF9F32500D1947A /* TegDownloaderSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1725BD1AF9F32500D1947A /* TegDownloaderSession.swift */; };
 		7E1725C01AF9F33C00D1947A /* TegMockedNSUrlSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1725BF1AF9F33C00D1947A /* TegMockedNSUrlSessionDataTask.swift */; };
 		7E1725C21AF9F35000D1947A /* TegString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1725C11AF9F35000D1947A /* TegString.swift */; };
+		7E1725C61AF9F53200D1947A /* TegHttpHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1725C51AF9F53200D1947A /* TegHttpHeader.swift */; };
+		7E1725C81AF9F55F00D1947A /* TegHttpRequestIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1725C71AF9F55F00D1947A /* TegHttpRequestIdentity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,15 +91,15 @@
 		7E1725AA1AF9F11100D1947A /* TegSingleImageDownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegSingleImageDownloadManager.swift; sourceTree = "<group>"; };
 		7E1725AD1AF9F1B500D1947A /* TegPagedImagesCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegPagedImagesCellView.swift; sourceTree = "<group>"; };
 		7E1725AF1AF9F1F900D1947A /* TegAsyncImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegAsyncImageDownloader.swift; sourceTree = "<group>"; };
-		7E1725B11AF9F23000D1947A /* TegHttpRequestIdentity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegHttpRequestIdentity.swift; sourceTree = "<group>"; };
 		7E1725B31AF9F24000D1947A /* TegDownloaderAsync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegDownloaderAsync.swift; sourceTree = "<group>"; };
 		7E1725B51AF9F25C00D1947A /* TegErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegErrors.swift; sourceTree = "<group>"; };
 		7E1725B71AF9F28A00D1947A /* TegHttpMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegHttpMethod.swift; sourceTree = "<group>"; };
 		7E1725B91AF9F29A00D1947A /* TegHttpContentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegHttpContentType.swift; sourceTree = "<group>"; };
-		7E1725BB1AF9F30800D1947A /* TegReachabilityHttpHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegReachabilityHttpHeader.swift; sourceTree = "<group>"; };
 		7E1725BD1AF9F32500D1947A /* TegDownloaderSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegDownloaderSession.swift; sourceTree = "<group>"; };
 		7E1725BF1AF9F33C00D1947A /* TegMockedNSUrlSessionDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegMockedNSUrlSessionDataTask.swift; sourceTree = "<group>"; };
 		7E1725C11AF9F35000D1947A /* TegString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegString.swift; sourceTree = "<group>"; };
+		7E1725C51AF9F53200D1947A /* TegHttpHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegHttpHeader.swift; sourceTree = "<group>"; };
+		7E1725C71AF9F55F00D1947A /* TegHttpRequestIdentity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegHttpRequestIdentity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,10 +139,10 @@
 				7E1725B31AF9F24000D1947A /* TegDownloaderAsync.swift */,
 				7E1725BD1AF9F32500D1947A /* TegDownloaderSession.swift */,
 				7E1725B91AF9F29A00D1947A /* TegHttpContentType.swift */,
+				7E1725C51AF9F53200D1947A /* TegHttpHeader.swift */,
 				7E1725B71AF9F28A00D1947A /* TegHttpMethod.swift */,
+				7E1725C71AF9F55F00D1947A /* TegHttpRequestIdentity.swift */,
 				7E1725BF1AF9F33C00D1947A /* TegMockedNSUrlSessionDataTask.swift */,
-				7E1725BB1AF9F30800D1947A /* TegReachabilityHttpHeader.swift */,
-				7E1725B11AF9F23000D1947A /* TegHttpRequestIdentity.swift */,
 				2B6985921A240965002FDEC0 /* ImageDownloader */,
 			);
 			name = Http;
@@ -357,6 +357,7 @@
 			files = (
 				7E1725C01AF9F33C00D1947A /* TegMockedNSUrlSessionDataTask.swift in Sources */,
 				7E1725AC1AF9F11100D1947A /* TegSingleImageDownloadManager.swift in Sources */,
+				7E1725C81AF9F55F00D1947A /* TegHttpRequestIdentity.swift in Sources */,
 				2B1151951ADF939900FC26C5 /* TegPagedControlContainer.swift in Sources */,
 				2BEDBB991A22B7F40058380D /* TegScreenSize.swift in Sources */,
 				2B1151981ADF939900FC26C5 /* TegPagedImagesCellViewDelegate.swift in Sources */,
@@ -367,6 +368,7 @@
 				2B6985AE1A241E5A002FDEC0 /* README.md in Sources */,
 				7E1725C21AF9F35000D1947A /* TegString.swift in Sources */,
 				2B11519A1ADF939900FC26C5 /* YiiPagedImages.swift in Sources */,
+				7E1725C61AF9F53200D1947A /* TegHttpHeader.swift in Sources */,
 				2B1151991ADF939900FC26C5 /* TegPagedImagesSettings.swift in Sources */,
 				7E1725B61AF9F25C00D1947A /* TegErrors.swift in Sources */,
 				2B11518C1ADF92AB00FC26C5 /* TegArray.swift in Sources */,
@@ -378,9 +380,7 @@
 				7E1725B81AF9F28A00D1947A /* TegHttpMethod.swift in Sources */,
 				7E1725BA1AF9F29A00D1947A /* TegHttpContentType.swift in Sources */,
 				7E1725AB1AF9F11100D1947A /* TegImageDownloader.swift in Sources */,
-				7E1725BC1AF9F30800D1947A /* TegReachabilityHttpHeader.swift in Sources */,
 				2B5108731A24328B006C029B /* TegAutolayoutConstraints.swift in Sources */,
-				7E1725B21AF9F23000D1947A /* TegHttpRequestIdentity.swift in Sources */,
 				2B11518E1ADF930800FC26C5 /* TegUIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

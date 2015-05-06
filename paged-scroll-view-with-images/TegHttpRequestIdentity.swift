@@ -10,14 +10,14 @@ public struct TegHttpRequestIdentity
   public let method: TegHttpMethod
   public let requestBody: NSData?
   public let contentType: TegHttpContentType
-  public let httpHeaders: [TegReachabilityHttpHeader]
+  public let httpHeaders: [TegHttpHeader]
   public let mockedResponse: String?
 
   init(url: String,
     method: TegHttpMethod,
     requestBody: NSData?,
     contentType: TegHttpContentType,
-    httpHeaders: [TegReachabilityHttpHeader],
+    httpHeaders: [TegHttpHeader],
     mockedResponse: String?) {
 
     self.url = url
@@ -37,7 +37,7 @@ public struct TegHttpRequestIdentity
     self.mockedResponse = nil
   }
 
-  init(identityToCopy: TegHttpRequestIdentity, httpHeaders: [TegReachabilityHttpHeader]) {
+  init(identityToCopy: TegHttpRequestIdentity, httpHeaders: [TegHttpHeader]) {
     url = identityToCopy.url
     method = identityToCopy.method
     requestBody = identityToCopy.requestBody

@@ -1,6 +1,6 @@
 import Foundation
 
-public struct TegReachabilityHttpHeader {
+public struct TegHttpHeader {
   public let field: String
   public let value: String
 }
