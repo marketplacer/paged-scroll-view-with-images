@@ -1,18 +1,24 @@
-
 //
 //  Downloads image from server.
-//  If image is not found it still called onSuccess callback with 'no image' placeholder image.
+//  If image is not found it still calls onSuccess callback with 'no image' placeholder image.
 //
-//  Callbacks are called in the main queue.
+//  Note: callbacks are called in the main queue.
+//
+//  To download an image we typically use TegImageDownloadManager class that automatically handles
+//  image download cancellation.
 //
 
 import UIKit
 
-class TegImageDownloader {
-  class func download(url: String, onSuccess: (UIImage)->(),
+public class TegImageDownloader {
+  private let asyncDownloader = TegAsyncImageDownloader()
+  
+  public init() { }
+
+  public func download(url: String, onSuccess: (UIImage)->(),
     onAlways: (()->())? = nil) -> NSURLSessionDataTask? {
 
-    return TegAsyncImageDownloader.download(url,
+    return asyncDownloader.download(url,
       onSuccess: { image in
         TegQ.main { onSuccess(image) }
       },

@@ -1,19 +1,21 @@
 //
 //  Downloads image from server.
-//  If image is not found it still called onSuccess callback with 'no image' placeholder image.
+//  If image is not found onSuccess callback is called with 'no image' placeholder image.
 //
-//  Callbacks are called asynchronously and NOT in the main queue.
+//  Note: callbacks are called asynchronously and NOT in the main queue.
 //
 
 import UIKit
 
 class TegAsyncImageDownloader {
-  class func download(url: String, onSuccess: (UIImage)->(),
+  func download(url: String, onSuccess: (UIImage)->(),
     onAlways: (()->())? = nil) -> NSURLSessionDataTask? {
       
-    return TegAsyncDownloaderSession.shared.dataWithUrl(url,
-      onSuccess: { (data, response) in
-        self.handleResponse(data, response: response, callback: onSuccess)
+    let requestIdentity = TegHttpRequestIdentity(url: url)
+
+    return TegDownloaderAsync.load(requestIdentity,
+      onSuccess: { [weak self] (data, response) in
+        self?.handleResponse(data, response: response, callback: onSuccess)
       },
       onAlways: {
         if let onAllwaysArgument = onAlways {
@@ -23,12 +25,12 @@ class TegAsyncImageDownloader {
     )
   }
   
-  class func validMimeType(mimeType: String) -> Bool {
+  func validMimeType(mimeType: String) -> Bool {
     let validMimeTypes = ["image/jpeg", "image/pjpeg"]
     return contains(validMimeTypes, mimeType)
   }
   
-  class private func handleResponse(data: NSData, response: NSHTTPURLResponse, callback: (UIImage)->()) {
+  private func handleResponse(data: NSData, response: NSHTTPURLResponse, callback: (UIImage)->()) {
     if response.statusCode != 200 {
       handleError(callback)
       return
@@ -49,7 +51,7 @@ class TegAsyncImageDownloader {
     }
   }
   
-  class private func handleError(callback: (UIImage)->()) {
+  private func handleError(callback: (UIImage)->()) {
     if let image = UIImage(named: "no_image.jpg") {
       callback(image)
     }

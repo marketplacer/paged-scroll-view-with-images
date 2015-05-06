@@ -1,0 +1,52 @@
+//
+//  Describes an HTTP request: url, HTTP method, body data etc.
+//
+
+import Foundation
+
+public struct TegHttpRequestIdentity
+{
+  public let url: String
+  public let method: TegHttpMethod
+  public let requestBody: NSData?
+  public let contentType: TegHttpContentType
+  public let httpHeaders: [TegReachabilityHttpHeader]
+  public let mockedResponse: String?
+
+  init(url: String,
+    method: TegHttpMethod,
+    requestBody: NSData?,
+    contentType: TegHttpContentType,
+    httpHeaders: [TegReachabilityHttpHeader],
+    mockedResponse: String?) {
+
+    self.url = url
+    self.method = method
+    self.requestBody = requestBody
+    self.contentType = contentType
+    self.httpHeaders = httpHeaders
+    self.mockedResponse = mockedResponse
+  }
+
+  public init(url: String) {
+    self.url = url
+    method = TegHttpMethod.Get
+    requestBody = nil
+    contentType = TegHttpContentType.Unspecified
+    httpHeaders = []
+    self.mockedResponse = nil
+  }
+
+  init(identityToCopy: TegHttpRequestIdentity, httpHeaders: [TegReachabilityHttpHeader]) {
+    url = identityToCopy.url
+    method = identityToCopy.method
+    requestBody = identityToCopy.requestBody
+    contentType = identityToCopy.contentType
+    mockedResponse = identityToCopy.mockedResponse
+    self.httpHeaders = httpHeaders
+  }
+
+  public var nsUrl: NSURL? {
+    return NSURL(string: url)
+  }
+}

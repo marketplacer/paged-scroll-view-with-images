@@ -10,7 +10,7 @@ class TegPagedImagesCellView: UIView {
   weak var delegate: TegPagedImagesCellViewDelegate?
   
   private let imageView = UIImageView()
-  private var downloadTask: TegImageDownloadTask?
+  private var downloadManager: TegSingleImageDownloadManager?
   private let settings: TegPagedImagesSettings
   
   init(frame: CGRect, settings: TegPagedImagesSettings) {
@@ -31,7 +31,7 @@ class TegPagedImagesCellView: UIView {
   }
   
   func respondToTap(gesture: UITapGestureRecognizer) {
-    if downloadTask != nil { return } // downloading
+    if downloadManager != nil { return } // downloading
     
     if let image = imageView.image {
       delegate?.tegPagedImagesCellViewDelegate_onImageTapped(image, gesture: gesture)
@@ -66,27 +66,24 @@ class TegPagedImagesCellView: UIView {
   }
   
   func cancelImageDownload() {
-    downloadTask?.cancel()
-    downloadTask = nil
+    downloadManager = nil
   }
   
   private func downloadImage() {
-    if downloadTask != nil { return } // already downloading
+    if downloadManager != nil { return } // already downloading
     
     if let url = url {
-      let newDownload = TegImageDownloadTask(url: url)
+      downloadManager = TegSingleImageDownloadManager()
       
-      newDownload.download { [weak self] image in
+      downloadManager?.download(fromUrl: url) { [weak self] image in
         self?.imagedDownloadComplete(image)
       }
-      
-      downloadTask = newDownload
     }
   }
   
   private func imagedDownloadComplete(image: UIImage) {
     url = nil
-    downloadTask = nil
+    downloadManager = nil
     fadeInImage(image)
   }
   
