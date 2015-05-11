@@ -73,7 +73,7 @@ class TegPagedImagesCellView: UIView {
     if downloadManager != nil { return } // already downloading
     
     if let url = url {
-      downloadManager = TegSingleImageDownloadManager()
+      downloadManager = settings.singleImageDownloadImageFactory.create()
       
       downloadManager?.download(fromUrl: url) { [weak self] image in
         self?.imagedDownloadComplete(image)

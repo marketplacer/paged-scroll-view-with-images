@@ -1,13 +1,13 @@
 import UIKit
 
-class YiiPagedImages: NSObject, UIScrollViewDelegate {
+public class YiiPagedImages: NSObject, UIScrollViewDelegate {
   @IBOutlet weak var scrollView: UIScrollView!
   private let pageControl = UIPageControl()
   private let pagedControlContainer = TegPagedControlContainer()
   
   weak var delegate: TegPagedImagesCellViewDelegate?
 
-  var settings = TegPagedImagesSettings()
+  public var settings = TegPagedImagesSettings()
   
   deinit {
     cancelImageDownloads()
@@ -147,7 +147,7 @@ class YiiPagedImages: NSObject, UIScrollViewDelegate {
   // MARK: UIScrollViewDelegate
   // --------------------------
   
-  func scrollViewDidScroll(scrollView: UIScrollView) {
+  public func scrollViewDidScroll(scrollView: UIScrollView) {
     updateCurrentPage()
     notifyCellsAboutTheirVisibility()
   }
