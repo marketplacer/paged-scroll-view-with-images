@@ -40,4 +40,4 @@ Photos are taken from following sources:
 
 ## Project Home
 
-[https://github.com/exchangegroup/paged-scroll-view-with-images](https://github.com/exchangegroup/paged-scroll-view-with-images)
+[https://github.com/marketplacer/paged-scroll-view-with-images](https://github.com/marketplacer/paged-scroll-view-with-images)
